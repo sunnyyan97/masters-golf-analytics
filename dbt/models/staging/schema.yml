@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_player_list
+    description: "Staging layer for DataGolf player list. Populated in Phase 2."
+    columns:
+      - name: player_id
+        description: "DataGolf player ID — primary key across all endpoints"
+        tests:
+          - not_null

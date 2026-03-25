@@ -1,0 +1,21 @@
+name: 'masters_golf'
+version: '1.0.0'
+config-version: 2
+
+profile: 'masters_golf'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target"]
+
+models:
+  masters_golf:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

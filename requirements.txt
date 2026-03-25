@@ -1,0 +1,22 @@
+# API & HTTP
+requests==2.32.3
+
+# Database
+duckdb==1.2.1
+dbt-core==1.9.0
+dbt-duckdb==1.9.1
+
+# Data manipulation
+pandas==2.2.3
+numpy==2.2.3
+
+# Environment
+python-dotenv==1.1.0
+
+# Streamlit
+streamlit==1.44.0
+plotly==6.0.1
+
+# Dev utilities
+pytest==8.3.5
+black==25.1.0

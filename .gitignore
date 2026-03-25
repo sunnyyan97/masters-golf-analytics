@@ -205,3 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Environment
+.env
+venv/
+
+# DuckDB database files
+*.duckdb
+*.duckdb.wal
+data/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/.user.yml
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
