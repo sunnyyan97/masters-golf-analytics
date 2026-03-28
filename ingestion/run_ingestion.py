@@ -44,16 +44,32 @@ def main():
     print(f"{n:,} rows → raw.masters_field_2026")
 
     # --- Historical Masters rounds (with is_covid_year flag) ---
+    # Flatten per-round nested dicts: each scores row has round_1..round_4 as dicts
+    # containing score, sg_total, sg_ott, sg_app, sg_arg, sg_putt, driving_acc, etc.
     print("\nFetching Masters rounds (2019–2025):")
     all_rounds = []
     for year in MASTERS_YEARS:
         event_id = MASTERS_EVENT_ID_OVERRIDES.get(year, MASTERS_EVENT_ID)
         resp = client.get_historical_rounds(event_id, year)
         rows = resp.get("scores", [])
+        year_count = 0
         for row in rows:
-            row["is_covid_year"] = year == COVID_YEAR
-        all_rounds.extend(rows)
-        print(f"  {year}: {len(rows)} rows")
+            for round_num in [1, 2, 3, 4]:
+                rnd = row.get(f"round_{round_num}")
+                if rnd is None:
+                    continue
+                flat_row = {
+                    "dg_id": row["dg_id"],
+                    "player_name": row["player_name"],
+                    "fin_text": row.get("fin_text"),
+                    "year": year,
+                    "is_covid_year": year == COVID_YEAR,
+                    "round_num": round_num,
+                    **rnd,
+                }
+                all_rounds.append(flat_row)
+                year_count += 1
+        print(f"  {year}: {year_count} round rows")
     n = load_masters_rounds(conn, all_rounds)
     print(f"  → raw.masters_rounds: {n:,} rows total")
 

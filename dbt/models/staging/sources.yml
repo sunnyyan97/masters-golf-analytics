@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: player_list
+      - name: dg_rankings
+      - name: skill_ratings
+      - name: approach_skill
+      - name: masters_field_2026
+      - name: masters_rounds
+      - name: pred_archive

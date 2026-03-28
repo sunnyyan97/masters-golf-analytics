@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: mart_player_model_inputs
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: augusta_mu
+        tests:
+          - not_null
+      - name: player_sigma
+        tests:
+          - not_null
+
+  - name: mart_simulation_results
+    # win_pct / top5_pct / top10_pct tests added after Phase 4 writes real data
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_backtest_comparison
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique

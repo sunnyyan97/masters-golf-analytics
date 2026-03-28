@@ -1,4 +1,7 @@
--- stg_player_list.sql
--- Placeholder — will be populated after ingestion in Phase 2
-
-select 1 as player_id, 'placeholder' as player_name
+select
+    cast(dg_id as integer)                              as datagolf_id,
+    player_name,
+    country,
+    country_code,
+    amateur = 1                                          as is_amateur
+from {{ source('raw', 'player_list') }}

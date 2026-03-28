@@ -2,9 +2,65 @@ version: 2
 
 models:
   - name: stg_player_list
-    description: "Staging layer for DataGolf player list. Populated in Phase 2."
     columns:
-      - name: player_id
-        description: "DataGolf player ID — primary key across all endpoints"
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_dg_rankings
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: sg_overall_rolling
+        tests:
+          - not_null
+
+  - name: stg_skill_ratings
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_approach_skill
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_masters_field_2026
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_masters_rounds
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+      - name: round_num
+        tests:
+          - not_null
+      - name: is_covid_year
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+
+  - name: stg_pred_archive
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+      - name: season
         tests:
           - not_null

@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_augusta_career_sg
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: augusta_sg_total
+        tests:
+          - not_null
+      - name: rounds_played
+        tests:
+          - not_null
+
+  - name: int_player_sigma
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: player_sigma
+        tests:
+          - not_null
+
+  - name: int_recent_trajectory
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_augusta_fit_score
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: augusta_fit_score
+        tests:
+          - not_null
