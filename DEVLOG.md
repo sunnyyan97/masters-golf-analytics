@@ -16,7 +16,7 @@
 ## Phase status
 - [x] Phase 1 — Repo + environment setup
 - [x] Phase 2 — DataGolf ingestion ✓ (7 raw tables, 627 rounds, 543 pred_archive rows)
-- [ ] Phase 3 — dbt data model
+- [x] Phase 3 — dbt data model ✓ (14 models, 40 tests, 135-row mart_player_model_inputs)
 - [ ] Phase 4 — Simulation engine
 - [ ] Phase 5 — Back-testing
 - [ ] Phase 6 — Streamlit UI
@@ -87,6 +87,29 @@
 - not_null + unique on datagolf_id in all mart models
 - not_null on win_pct, top5_pct, top10_pct in mart_simulation_results
 - accepted_values on is_covid_year: [true, false]
+
+---
+
+## Phase 3 — dbt model context (post-build notes)
+
+### Validation results (confirmed clean)
+- `mart_player_model_inputs`: 135 rows, 0 null on datagolf_id / augusta_mu / player_sigma
+- Mu range: -1.73 to +0.92, mean -0.05 (reasonable SG distribution)
+- Sigma range: 1.55 to 3.82, mean 2.96 (3.0 fallback for players with <10 rounds)
+- Debut players (augusta_rounds_played=0): sigma correctly fallback to 3.0
+
+### Known limitations
+- `int_recent_trajectory` now uses a real two-signal combined momentum_delta:
+  0.6 × DG `timing_adjustment` (from player-decompositions, current event only) +
+  0.4 × Augusta trend (recent 2024–2025 SG vs prior 2019–2023 SG, capped ±0.8).
+  Players absent from the current event field get timing_adjustment = 0 (coalesce).
+  For Phase 5 back-test years, only the Augusta trend component is available (DG
+  player-decompositions has no historical archive).
+- 6 players have null `sg_overall_rolling` (not in DG top 500): Campos, Sargent, Willett,
+  Wise, Howell III, Russell — these coalesce to 0 in the mu formula, which underweights them
+- SG component coverage in masters_rounds: `sg_total` available all years (2019–2025);
+  `sg_ott`, `sg_app`, `sg_arg`, `sg_putt` only available from 2021 onwards
+- Pred archive win_pct values are decimal (0–1 range), summing to ~1.0 per year
 
 ---
 

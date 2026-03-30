@@ -56,6 +56,16 @@ models:
           - accepted_values:
               values: [true, false]
 
+  - name: stg_player_decompositions
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+          - unique
+      - name: timing_adjustment
+        tests:
+          - not_null
+
   - name: stg_pred_archive
     columns:
       - name: datagolf_id

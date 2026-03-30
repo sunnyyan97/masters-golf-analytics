@@ -7,6 +7,9 @@ models:
         tests:
           - not_null
           - unique
+      - name: player_name
+        tests:
+          - not_null
       - name: augusta_mu
         tests:
           - not_null

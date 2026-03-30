@@ -30,6 +30,9 @@ models:
         tests:
           - not_null
           - unique
+      - name: momentum_delta
+        tests:
+          - not_null
 
   - name: int_augusta_fit_score
     columns:

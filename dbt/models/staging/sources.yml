@@ -11,3 +11,4 @@ sources:
       - name: masters_field_2026
       - name: masters_rounds
       - name: pred_archive
+      - name: player_decompositions

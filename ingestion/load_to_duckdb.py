@@ -56,3 +56,7 @@ def load_masters_rounds(conn, records: list[dict]) -> int:
 
 def load_pred_archive(conn, records: list[dict]) -> int:
     return _write_table(conn, "pred_archive", records)
+
+
+def load_player_decompositions(conn, records: list[dict]) -> int:
+    return _write_table(conn, "player_decompositions", records)

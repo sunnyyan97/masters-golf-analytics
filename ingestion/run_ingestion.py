@@ -6,6 +6,7 @@ from ingestion.load_to_duckdb import (
     load_dg_rankings,
     load_masters_field_2026,
     load_masters_rounds,
+    load_player_decompositions,
     load_player_list,
     load_pred_archive,
     load_skill_ratings,
@@ -86,6 +87,23 @@ def main():
         print(f"  {year}: {len(rows)} rows")
     n = load_pred_archive(conn, all_preds)
     print(f"  → raw.pred_archive: {n:,} rows total")
+
+    # --- Player decompositions (current event — general momentum signal) ---
+    print("\nFetching player decompositions (current event):", end=" ", flush=True)
+    decomp_resp = client.get_player_decompositions(tour="pga")
+    decomp_rows = [
+        {
+            "dg_id": p["dg_id"],
+            "player_name": p["player_name"],
+            "event_name": decomp_resp.get("event_name"),
+            "timing_adjustment": p.get("timing_adjustment"),
+            "baseline_pred": p.get("baseline_pred"),
+            "final_pred": p.get("final_pred"),
+        }
+        for p in decomp_resp.get("players", [])
+    ]
+    n = load_player_decompositions(conn, decomp_rows)
+    print(f"{n} rows → raw.player_decompositions")
 
     conn.close()
     print("\nIngestion complete.")
