@@ -191,12 +191,49 @@ Augusta_mu =
 ---
 
 ## Known decisions and constraints
-- 2020 Masters (covid year) — flagged, excluded from 
+- 2020 Masters (covid year) — flagged, excluded from
   career SG averages
-- LIV players (Rahm, Koepka, DJ) — sparse recent SG, 
+- LIV players (Rahm, Koepka, DJ) — sparse recent SG,
   fall back to DG ranking + Augusta historical data
-- DuckDB write lock — stop Streamlit before running 
+- DuckDB write lock — stop Streamlit before running
   dbt or simulation scripts
 - DataGolf ToS — personal non-commercial use only
 - Probabilities must sum to ~100% — validate after every sim run
 - Player sigma fallback: if <10 historical rounds, use 3.0
+- Late field additions (e.g., Houston Open winner earns invite):
+  run `python -m ingestion.refresh_field` — refreshes only the 5
+  current-state tables (field, skill_ratings, dg_rankings,
+  approach_skill, player_decompositions), prints a field diff
+  (ADDED/REMOVED players), then re-run
+  `dbt build --select +mart_player_model_inputs`.
+  New players with no DG data get augusta_mu ≈ 0, sigma = 3.0
+  (neutral high-variance estimate via existing coalesce fallbacks).
+  Note: DataGolf's field endpoint can lag 1–2 days after a Sunday win
+  (confirmed: Woodland/Houston Open not reflected until Monday+).
+
+---
+
+## Masters week checklist (April 6–7, before first round April 10)
+
+1. Re-run field refresh — picks up any WDs or late invites since last ingestion:
+   ```
+   python -m ingestion.refresh_field
+   ```
+   Check diff output — e.g., Houston Open winner (Woodland) should appear as ADDED.
+
+2. Rebuild mart with updated field:
+   ```
+   cd dbt && dbt build --select +mart_player_model_inputs
+   ```
+
+3. Run simulation:
+   ```
+   python -m simulation.simulator
+   ```
+
+4. Confirm win_pct sum ≈ 1.0 (assertion built into simulator).
+
+5. Start Streamlit (stop dbt/sim first — DuckDB write lock):
+   ```
+   streamlit run streamlit/app.py
+   ```
