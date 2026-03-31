@@ -18,12 +18,20 @@ models:
           - not_null
 
   - name: mart_simulation_results
-    # win_pct / top5_pct / top10_pct tests added after Phase 4 writes real data
     columns:
       - name: datagolf_id
         tests:
           - not_null
           - unique
+      - name: win_pct
+        tests:
+          - not_null
+      - name: top5_pct
+        tests:
+          - not_null
+      - name: top10_pct
+        tests:
+          - not_null
 
   - name: mart_backtest_comparison
     columns:

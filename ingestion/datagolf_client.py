@@ -86,9 +86,17 @@ class DataGolfClient:
             {"tour": tour, "event_id": event_id, "year": year},
         )
 
+    def get_schedule(self, tour: str = "pga") -> dict:
+        """Tour schedule (event names, dates, courses). tour: 'pga', 'euro', 'kft', 'liv'."""
+        return self._get("get-schedule", {"tour": tour})
+
     def get_field_updates(self, tour: str = "pga") -> dict:
         """Current field with WDs, tee times, and start holes."""
         return self._get("field-updates", {"tour": tour})
+
+    def get_upcoming_field(self, tour: str = "pga") -> dict:
+        """Next week's field (WDs, tee times, start holes). Same schema as get_field_updates()."""
+        return self._get("field-updates", {"tour": f"upcoming_{tour}"})
 
     def get_pre_tournament_predictions(
         self, tour: str = "pga", odds_format: str = "percent"

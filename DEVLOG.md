@@ -17,7 +17,7 @@
 - [x] Phase 1 — Repo + environment setup
 - [x] Phase 2 — DataGolf ingestion ✓ (7 raw tables, 627 rounds, 543 pred_archive rows)
 - [x] Phase 3 — dbt data model ✓ (14 models, 40 tests, 135-row mart_player_model_inputs)
-- [ ] Phase 4 — Simulation engine
+- [x] Phase 4 — Simulation engine ✓ (93-player Masters field, 50k sims in 0.4s, win_pct sum=1.0)
 - [ ] Phase 5 — Back-testing
 - [ ] Phase 6 — Streamlit UI
 - [ ] Phase 7 — MotherDuck + Streamlit Cloud deploy
@@ -110,6 +110,31 @@
 - SG component coverage in masters_rounds: `sg_total` available all years (2019–2025);
   `sg_ott`, `sg_app`, `sg_arg`, `sg_putt` only available from 2021 onwards
 - Pred archive win_pct values are decimal (0–1 range), summing to ~1.0 per year
+
+---
+
+## Phase 4 — Simulation context (post-build notes)
+
+### Field data fix — upcoming_pga parameter
+DataGolf's `field-updates?tour=pga` only returns the CURRENT active PGA Tour event.
+Before Masters week, this returns the Valero Texas Open (or whatever is in play).
+Fix: use `field-updates?tour=upcoming_pga` to get next week's field.
+`refresh_field.py` now auto-detects: tries current event first, falls back to upcoming
+if the current event name doesn't contain "masters" or "augusta".
+93 players loaded for 2026 Masters field (normal range: 89–93 players per year).
+
+### First full sim results (50k sims, 2026-03-30)
+- McIlroy leads win_pct at 5.9% — strong DG rating + Augusta fit
+- Scheffler: 4.2% win but lowest MC% (7.2%) and highest top10% (46.6%) — model correctly
+  captures his consistency; win% slightly suppressed because high mu raises
+  a lot of players' relative chances
+- Validation assertion passed: win_pct sum = 1.0000
+
+### Known limitations (Phase 4)
+- player_decompositions always reflects the CURRENT PGA Tour event (Valero), not the Masters.
+  timing_adjustment signal will be refreshed during Masters week via `refresh_field.py`.
+- Masters field loaded 10 days pre-tournament — re-run refresh on April 7–9 to pick up any
+  late WDs or last-minute invites before running the final simulation.
 
 ---
 
@@ -210,6 +235,9 @@ Augusta_mu =
   (neutral high-variance estimate via existing coalesce fallbacks).
   Note: DataGolf's field endpoint can lag 1–2 days after a Sunday win
   (confirmed: Woodland/Houston Open not reflected until Monday+).
+- Field detection logic: `refresh_field.py` tries `field-updates?tour=pga` first;
+  if the current event is not the Masters it auto-falls back to `tour=upcoming_pga`
+  (next week's field). This allows loading the Masters field up to ~1 week early.
 
 ---
 

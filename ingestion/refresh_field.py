@@ -21,6 +21,12 @@ from ingestion.load_to_duckdb import (
     load_skill_ratings,
 )
 
+MASTERS_KEYWORDS = ("masters", "augusta")
+
+
+def _is_masters(event_name: str) -> bool:
+    return any(kw in event_name.lower() for kw in MASTERS_KEYWORDS)
+
 
 def _snapshot_field(conn) -> dict[int, str]:
     """Return {datagolf_id: player_name} for the current field table."""
@@ -73,9 +79,25 @@ def main():
 
     print("Fetching 2026 Masters field...", end=" ", flush=True)
     field_resp = client.get_field_updates(tour="pga")
-    field_rows = field_resp.get("field", [])
-    n = load_masters_field_2026(conn, field_rows)
-    print(f"{n:,} rows → raw.masters_field_2026")
+    event_name = field_resp.get("event_name", "")
+    if not _is_masters(event_name):
+        print(f"\n  Current event: '{event_name}' — not the Masters. Trying upcoming field...")
+        field_resp = client.get_upcoming_field(tour="pga")
+        event_name = field_resp.get("event_name", "")
+        if not _is_masters(event_name):
+            print(f"  Upcoming event: '{event_name}' — Masters field not yet available.")
+            print("  Skipping field update. Existing raw.masters_field_2026 unchanged.")
+            field_rows = []
+        else:
+            print(f"  Found upcoming Masters field: '{event_name}'")
+            field_rows = field_resp.get("field", [])
+    else:
+        field_rows = field_resp.get("field", [])
+    if field_rows:
+        n = load_masters_field_2026(conn, field_rows)
+        print(f"{n:,} rows → raw.masters_field_2026 (event: {event_name})")
+    else:
+        print("0 rows loaded (field not yet available)")
 
     print("Fetching player decompositions (current event):", end=" ", flush=True)
     decomp_resp = client.get_player_decompositions(tour="pga")
