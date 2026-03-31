@@ -136,8 +136,8 @@ def _print_leaderboard(results: pd.DataFrame) -> None:
 
 def main():
     parser = argparse.ArgumentParser(description="Masters Monte Carlo simulator")
-    parser.add_argument("--n_sims", type=int, default=50_000,
-                        help="Number of simulations (default: 50,000)")
+    parser.add_argument("--n_sims", type=int, default=100_000,
+                        help="Number of simulations (default: 100,000)")
     parser.add_argument("--seed", type=int, default=None,
                         help="RNG seed for reproducibility (default: random)")
     args = parser.parse_args()

@@ -17,7 +17,7 @@
 - [x] Phase 1 — Repo + environment setup
 - [x] Phase 2 — DataGolf ingestion ✓ (7 raw tables, 627 rounds, 543 pred_archive rows)
 - [x] Phase 3 — dbt data model ✓ (14 models, 40 tests, 135-row mart_player_model_inputs)
-- [x] Phase 4 — Simulation engine ✓ (93-player Masters field, 50k sims in 0.4s, win_pct sum=1.0)
+- [x] Phase 4 — Simulation engine ✓ (93-player Masters field, 100k sims default, win_pct sum=1.0)
 - [ ] Phase 5 — Back-testing
 - [ ] Phase 6 — Streamlit UI
 - [ ] Phase 7 — MotherDuck + Streamlit Cloud deploy
@@ -123,7 +123,7 @@ Fix: use `field-updates?tour=upcoming_pga` to get next week's field.
 if the current event name doesn't contain "masters" or "augusta".
 93 players loaded for 2026 Masters field (normal range: 89–93 players per year).
 
-### First full sim results (50k sims, 2026-03-30)
+### First full sim results (50k sims, 2026-03-30; default bumped to 100k)
 - McIlroy leads win_pct at 5.9% — strong DG rating + Augusta fit
 - Scheffler: 4.2% win but lowest MC% (7.2%) and highest top10% (46.6%) — model correctly
   captures his consistency; win% slightly suppressed because high mu raises
@@ -148,7 +148,7 @@ Augusta_mu =
   + w4 * recent_trajectory      (weight: 0.10)
 
 ### Simulation mechanics
-- Default 50,000 simulations, --n_sims CLI flag for dev testing
+- Default 100,000 simulations, --n_sims CLI flag for dev testing (e.g. --n_sims 1000)
 - Draw shared field_difficulty per round: np.random.normal(0, 1.2)
   — this is the correlated outcomes fix, applied to all players
 - Per-round score = player_mu + field_difficulty + 
@@ -247,7 +247,10 @@ Augusta_mu =
    ```
    python -m ingestion.refresh_field
    ```
-   Check diff output — e.g., Houston Open winner (Woodland) should appear as ADDED.
+   Check diff output — e.g., late WDs or sponsor exemptions.
+   **Important:** this also refreshes `player_decompositions` — after re-running,
+   `timing_adjustment` will reflect Masters-specific DataGolf predictions rather than
+   the prior week's PGA event. Re-run dbt and the simulator after this step.
 
 2. Rebuild mart with updated field:
    ```
