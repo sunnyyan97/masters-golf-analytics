@@ -43,3 +43,24 @@ models:
       - name: augusta_fit_score
         tests:
           - not_null
+
+  - name: int_augusta_regression_inputs
+    description: >
+      One row per player per Augusta appearance (2021–2024) for ridge regression training.
+      Unique on (datagolf_id, season). Excludes covid year and pre-2021 rows (no SG categories).
+    columns:
+      - name: datagolf_id
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - not_null
+      - name: sg_total
+        tests:
+          - not_null
+      - name: prior_appearances
+        tests:
+          - not_null
+      - name: prior_augusta_sg
+        tests:
+          - not_null

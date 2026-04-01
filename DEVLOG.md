@@ -9,7 +9,7 @@
 
 ## Repo structure
 - ingestion/    — DataGolf API client + DuckDB loader
-- simulation/   — Monte Carlo engine (50k sims default, --n_sims flag)
+- simulation/   — Monte Carlo engine (100k sims default, --n_sims flag)
 - dbt/          — staging (views) → intermediate (views) → marts (tables)
 - streamlit/    — 4-page app
 
@@ -18,7 +18,8 @@
 - [x] Phase 2 — DataGolf ingestion ✓ (7 raw tables, 627 rounds, 543 pred_archive rows)
 - [x] Phase 3 — dbt data model ✓ (14 models, 40 tests, 135-row mart_player_model_inputs)
 - [x] Phase 4 — Simulation engine ✓ (93-player Masters field, 100k sims default, win_pct sum=1.0)
-- [ ] Phase 5 — Back-testing
+- [ ] Phase 4b — Ridge regression weight derivation (INSERT BEFORE Phase 5)
+- [ ] Phase 5 — Back-testing (3-way comparison: manual vs regression vs DataGolf)
 - [ ] Phase 6 — Streamlit UI
 - [ ] Phase 7 — MotherDuck + Streamlit Cloud deploy
 - [ ] Phase 8 — Live tournament
@@ -79,7 +80,9 @@
 - mart_player_model_inputs — one row per player in 2026 field,
   all features joined, ready for simulation
 - mart_simulation_results — loaded back from Python after sim
-  (win_pct, top5_pct, top10_pct, top25_pct, mc_pct, mu, sigma)
+  (win_pct, top5_pct, top10_pct, top25_pct, mc_pct, mu, sigma, model_type)
+  NOTE: model_type column added in Phase 4b — 'manual' or 'regression'
+  Both model runs write to the same table filtered by model_type
 - mart_backtest_comparison — your predictions vs DG archived 
   predictions, for back-test validation
 
@@ -140,7 +143,7 @@ if the current event name doesn't contain "masters" or "augusta".
 
 ## Phase 4 — Simulation context
 
-### Composite mu formula
+### Composite mu formula (manual weights — model_type='manual')
 Augusta_mu =
   w1 * sg_overall_rolling      (weight: 0.40)
   + w2 * augusta_historical_sg  (weight: 0.30)
@@ -168,24 +171,235 @@ Augusta_mu =
 
 ### Output
 - Write results back to mart_simulation_results in DuckDB
-- Include mu and sigma columns alongside probabilities 
-  for transparency in the UI
+- Include mu, sigma, and model_type columns alongside probabilities
+- model_type column distinguishes 'manual' vs 'regression' runs
+  (both coexist in the same table, filtered by model_type in queries)
 
 ---
 
-## Phase 5 — Back-testing context
+## Phase 4b — Ridge regression weight derivation
 
-### Methodology
-- For each year 2019–2024 (2020 optional), use only data 
-  available BEFORE that tournament started
-- Pull DG archived predictions from stg_pred_archive 
-  for the same years as comparison baseline
-- Primary metric: Spearman rank correlation 
-  (your rank vs actual finishing rank)
-- Secondary metric: top-10 precision 
-  (what % of your top-10 actually finished top-10)
-- Brier score requires round-level data — skip, note as limitation
-- Write results to mart_backtest_comparison
+### Purpose
+Replace manually chosen mu formula weights with data-derived coefficients from a
+ridge regression trained on historical Augusta finishing SG (2021–2024, years where
+SG category data is available). This produces a model_type='regression' sim run
+that runs alongside the existing model_type='manual' run for comparison in Phase 5.
+
+### Why ridge regression (not plain linear regression)
+- Small sample (~300–400 player-year observations after excluding covid + pre-2021 years)
+- Ridge adds L2 penalty to prevent overfitting — required at this sample size
+- RidgeCV auto-selects the best regularization strength via cross-validation
+- Coefficients are still fully interpretable (unlike XGBoost)
+
+### Step 1 — New dbt intermediate model
+Create `dbt/models/intermediate/int_augusta_regression_inputs.sql`
+
+This model produces one row per player per Augusta appearance with:
+- Target variable: sg_total for that year's Masters (actual outcome)
+- Features: sg_approach, sg_putting, sg_off_tee, sg_around_green
+  (use stg_masters_rounds_hist SG categories — available 2021+ only)
+- prior_augusta_sg: career avg SG at Augusta from all years BEFORE
+  this one (window function, no data leakage)
+- prior_appearances: count of Augusta starts before this year
+- Exclude is_covid_year = true (2020)
+- Exclude years before 2021 (SG category data not available pre-2021)
+- Final training set will be ~2021–2024, approx 300–400 rows
+
+IMPORTANT: prior_augusta_sg must use only data from years < current year
+(window function ordered by year, rows unbounded preceding to 1 preceding).
+This prevents data leakage — never use future results in a feature.
+
+### Step 2 — New Python script
+Create `simulation/derive_weights.py`
+
+Steps inside the script:
+1. Query int_augusta_regression_inputs from DuckDB into a pandas DataFrame
+2. Features: ['sg_approach', 'sg_putting', 'sg_off_tee', 'sg_around_green',
+              'prior_augusta_sg', 'prior_appearances']
+3. Target: 'sg_total' (Augusta finishing SG for that year)
+4. Standardize features with StandardScaler (required for ridge coefficients
+   to be comparable across features with different scales)
+5. Cross-validation strategy: LeaveOneGroupOut where groups = year
+   (train on 3 years, test on 1 — avoids temporal leakage)
+6. Fit RidgeCV with alphas=[0.1, 1.0, 10.0, 100.0]
+7. Print leave-one-year-out R² mean and std — this is the honest
+   validation metric to report (not training R²)
+8. Convert standardized coefficients back to original scale for
+   interpretability
+9. Save weights to simulation/regression_weights.json including:
+   - One coefficient per feature (original scale)
+   - intercept
+   - model_alpha (best alpha selected by CV)
+   - cv_r2_mean and cv_r2_std (report these honestly)
+   - n_training_samples
+
+Dependencies to add to requirements.txt if not present:
+  scikit-learn>=1.4.0
+
+Run with: `python -m simulation.derive_weights`
+
+### Step 3 — Update simulator.py to accept --model flag
+Add `--model` CLI argument: choices=['manual', 'regression'], default='manual'
+
+The simulation logic (cut rule, field difficulty, NumPy vectorization) is
+IDENTICAL for both models — only how player_mu is computed differs:
+
+manual:   mu = (0.40 * sg_overall) + (0.30 * augusta_hist_sg)
+              + (0.20 * fit_score) + (0.10 * trajectory)
+
+regression: mu = intercept
+                + coef['sg_approach']       * player['sg_approach']
+                + coef['sg_putting']        * player['sg_putting']
+                + coef['sg_off_tee']        * player['sg_off_tee']
+                + coef['sg_around_green']   * player['sg_around_green']
+                + coef['prior_augusta_sg']  * player['augusta_hist_sg']
+                + coef['prior_appearances'] * player['n_appearances']
+                (load coefs from simulation/regression_weights.json)
+
+Add a load_weights(model_type) helper function that returns the right
+weights dict based on model_type argument.
+
+mart_simulation_results already has a model_type column per Phase 4 output
+notes above. Both runs write to the same table — one row per player per
+model_type. Upsert/replace on (datagolf_id, model_type) to avoid duplicates.
+
+### Step 4 — Run both models
+After derive_weights.py completes successfully:
+
+```bash
+# Run manual model (existing, re-run to populate model_type column)
+python -m simulation.simulator --model manual --n_sims 100000
+
+# Run regression model
+python -m simulation.simulator --model regression --n_sims 100000
+```
+
+Both runs must pass the win_pct sum assertion (0.98–1.02).
+
+### Expected output from derive_weights.py
+The script should print something like:
+  Training data: ~320 player-years across 4 Masters (2021–2024)
+  Best alpha: [some value from 0.1–100.0]
+  Leave-one-year-out R²: 0.15–0.35 (+/- some std)
+  Derived weights: [feature coefficients]
+
+R² of 0.15–0.35 is EXPECTED and reasonable for golf — do not treat a low
+R² as a failure. Golf is high-variance. The regression weights are still
+more principled than manual weights even at low R².
+
+### Validation checks after Phase 4b
+- regression_weights.json exists in simulation/ directory
+- mart_simulation_results has rows for BOTH model_type='manual' 
+  and model_type='regression'
+- Both model_type win_pct columns sum to ~1.0 independently
+- Top 5 players differ slightly between the two models (expected)
+- If regression and manual produce identical rankings, something is wrong
+
+---
+
+## Phase 5 — Back-testing context (3-way comparison)
+
+### Overview
+Phase 5 evaluates THREE models side by side for each historical Masters year:
+  1. model_type='manual'     — your manually weighted composite mu
+  2. model_type='regression' — ridge regression derived weights
+  3. 'datagolf'              — DataGolf's archived pre-tournament predictions
+                               (from stg_pred_archive)
+
+The goal is a legitimate A/B test with a real external baseline, not just
+self-validation. This is the primary analytical contribution of the project.
+
+### Data available per year
+- 2019: sg_total only (no SG category breakdown pre-2021)
+         manual model can be back-tested; regression model CANNOT
+         (regression requires SG category features which are null pre-2021)
+         DataGolf predictions available if in pred_archive
+- 2021: full SG categories available — all three models testable
+- 2022: full SG categories available — all three models testable
+- 2023: full SG categories available — all three models testable
+- 2024: full SG categories available — all three models testable
+- 2020: EXCLUDED (covid year, November conditions)
+
+For 2019, only run manual vs DataGolf comparison. Note regression model
+years = 2021–2024 in all reporting.
+
+### Methodology — no data leakage rule
+For each back-test year Y, only use data that would have been available
+BEFORE the tournament started:
+- sg_overall_rolling: use the most recent skill ratings from stg_skill_ratings
+  as a proxy (current ratings are the best available approximation —
+  note this as a limitation since you don't have point-in-time skill rating snapshots)
+- augusta_hist_sg: use only rounds from years < Y
+  (already enforced in int_augusta_regression_inputs via window function)
+- prior_appearances: count of Augusta starts before year Y
+- DataGolf predictions: pull from stg_pred_archive for that year
+  (these are pre-tournament predictions, already point-in-time correct)
+
+Limitation to document: skill ratings used for back-test years are current
+(2026) ratings rather than true historical point-in-time ratings. This
+slightly inflates apparent back-test performance for all models equally
+and does not bias the comparison between models.
+
+### Actual results to retrieve
+For each back-test year, you need actual finishing positions.
+Source: stg_masters_rounds_hist — aggregate sg_total per player per year,
+rank players by total sg_total descending = actual finishing rank.
+Players who missed the cut get rank = (field_size - n_cuts_made + position).
+
+### Metrics to compute (per year, per model)
+Primary:
+- Spearman rank correlation: your predicted rank vs actual finishing rank
+  Use scipy.stats.spearmanr(predicted_ranks, actual_ranks)
+
+Secondary:
+- Top-10 precision: what % of your predicted top-10 actually finished top-10
+  = len(set(your_top10) ∩ set(actual_top10)) / 10
+
+Optional (if time allows):
+- Winner predicted rank: where did the actual winner appear in your model's ranking
+  (lower = better; #1 is perfect)
+
+### Output schema — mart_backtest_comparison
+One row per (year, model) combination:
+
+```
+year            INT       -- 2019, 2021, 2022, 2023, 2024
+model           VARCHAR   -- 'manual', 'regression', 'datagolf'
+spearman_corr   FLOAT     -- primary metric
+top10_precision FLOAT     -- secondary metric
+winner_rank     INT       -- where actual winner ranked in predictions
+n_players       INT       -- field size that year
+notes           VARCHAR   -- e.g. 'regression not available (pre-2021 SG)'
+```
+
+Write via Python after computing metrics — same DuckDB connection pattern
+as simulator.py uses for mart_simulation_results.
+
+### Expected results
+Regression will likely beat manual by Spearman +0.03 to +0.06 on average.
+Neither model is expected to consistently beat DataGolf — matching or
+beating DG on 2 of 4 years is a strong result worth highlighting.
+Document honestly: DG has more data, more features, and years of tuning.
+
+### Script to create
+`simulation/backtest.py` — single script that:
+1. Loops over years [2019, 2021, 2022, 2023, 2024]
+2. For each year, retrieves actual finishing ranks from stg_masters_rounds_hist
+3. For each model, reconstructs predicted rankings using historical inputs
+4. Computes spearman_corr and top10_precision for each (year, model) pair
+5. Writes all results to mart_backtest_comparison
+6. Prints a summary table to stdout
+
+Run with: `python -m simulation.backtest`
+
+### Streamlit back-test page (feeds into Phase 6)
+The back-test results page in Streamlit reads from mart_backtest_comparison
+and displays:
+- Summary metric cards: avg Spearman for each model across all years
+- Year-by-year table: all three models side by side per year
+- Methodology callout: honest disclosure of limitations
+  (point-in-time ratings, small sample, no Brier score)
+- Note: regression model years limited to 2021–2024
 
 ---
 
@@ -195,16 +409,25 @@ Augusta_mu =
 1. Pre-tournament rankings — main leaderboard table,
    win%/top5%/top10% probability bars, Augusta fit grade,
    vs-DG-model delta column, filter pills
+   ADD: model toggle at top of page — 'Manual weights' vs 'Regression weights'
+   toggle filters mart_simulation_results by model_type
+   Default: show regression model (it's the more principled one)
+   vs-DG-model delta column updates based on which model is selected
 2. Player deep dive — SG breakdown with Augusta weights labeled,
    Augusta profile (appearances, best finish, fit grade),
    model inputs panel (show augusta_historical_sg row dimmed
    if null — do NOT hide it), vs-DG comparison panel
+   ADD: show both model win% values side by side in the vs-DG panel
+   e.g. "Manual: 5.9% | Regression: 6.4% | DataGolf: 5.1%"
 3. What-if simulator — st.slider widgets per SG category,
    use pre-computed sensitivity table for live updates
    (NOT a full re-sim on every slider move),
    "Re-run simulation" button triggers real 5k sim
-4. Back-test results — rank correlation table by year,
+   Model toggle here too — sliders adjust whichever model is selected
+4. Back-test results — 3-way comparison table (manual vs regression vs DG),
+   avg Spearman metric cards at top, year-by-year breakdown,
    methodology notes callout, honest limitation disclosure
+   Note regression years = 2021–2024 only
 
 ### Performance
 - @st.cache_data(ttl=300) on all DuckDB reads
@@ -212,6 +435,8 @@ Augusta_mu =
   os.getenv in dev
 - Never run dbt and Streamlit simultaneously in dev 
   (DuckDB write lock)
+- Model toggle should use st.session_state so selection persists
+  across page navigation within the same session
 
 ---
 
@@ -243,6 +468,12 @@ Augusta_mu =
 - Field detection logic: `refresh_field.py` tries `field-updates?tour=pga` first;
   if the current event is not the Masters it auto-falls back to `tour=upcoming_pga`
   (next week's field). This allows loading the Masters field up to ~1 week early.
+- Ridge regression back-test years: 2021–2024 only (SG category data
+  not available pre-2021 in raw_masters_rounds_hist). Manual model
+  back-tests 2019 + 2021–2024. Note this asymmetry in all reporting.
+- mart_simulation_results model_type column: both 'manual' and 'regression'
+  rows coexist. All queries must filter by model_type explicitly.
+  Default display in Streamlit = 'regression'.
 
 ---
 
@@ -262,12 +493,13 @@ Augusta_mu =
    cd dbt && dbt build --select +mart_player_model_inputs
    ```
 
-3. Run simulation:
+3. Run both simulations:
    ```
-   python -m simulation.simulator
+   python -m simulation.simulator --model manual --n_sims 100000
+   python -m simulation.simulator --model regression --n_sims 100000
    ```
 
-4. Confirm win_pct sum ≈ 1.0 (assertion built into simulator).
+4. Confirm win_pct sum ≈ 1.0 for BOTH model runs (assertion built into simulator).
 
 5. Start Streamlit (stop dbt/sim first — DuckDB write lock):
    ```
