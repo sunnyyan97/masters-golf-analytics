@@ -2,7 +2,10 @@ with field as (
     select * from {{ ref('stg_masters_field_2026') }}
 ),
 rankings as (
-    select datagolf_id, sg_overall_rolling
+    select
+        datagolf_id,
+        sg_overall_rolling                    as sg_overall_rolling_raw,
+        coalesce(sg_overall_rolling, 0)       as sg_overall_rolling
     from {{ ref('stg_dg_rankings') }}
 ),
 career_sg as (
@@ -16,6 +19,9 @@ fit as (
 ),
 sigma as (
     select * from {{ ref('int_player_sigma') }}
+),
+driving as (
+    select * from {{ ref('int_driving_profile') }}
 )
 select
     f.datagolf_id,
@@ -44,6 +50,16 @@ select
     coalesce(s.player_sigma, 3.0)     as player_sigma,
     coalesce(s.rounds_available, 0)   as sigma_rounds_available,
 
+    -- Driving distance signals
+    d.aug_driving_dist,
+    coalesce(d.driving_dist_vs_avg, 0.0) as driving_dist_vs_avg,
+    coalesce(d.long_approach_sg,    0.0) as long_approach_sg,
+    coalesce(d.dist_data_rounds,    0)   as dist_data_rounds,
+
+    -- Activity discount inputs (derived from raw sg_overall_rolling before coalesce)
+    (r.sg_overall_rolling_raw is null) as sg_overall_is_null,
+    case when r.sg_overall_rolling_raw is null then 2 else 15 end as recent_starts,
+
     -- Composite mu
     0.40 * coalesce(r.sg_overall_rolling, 0)
     + 0.30 * coalesce(c.augusta_sg_total, 0)
@@ -56,3 +72,4 @@ left join career_sg c   on f.datagolf_id = c.datagolf_id
 left join trajectory t  on f.datagolf_id = t.datagolf_id
 left join fit            on f.datagolf_id = fit.datagolf_id
 left join sigma     s   on f.datagolf_id = s.datagolf_id
+left join driving   d   on f.datagolf_id = d.datagolf_id

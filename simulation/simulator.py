@@ -2,9 +2,10 @@
 Monte Carlo simulation engine for the 2026 Masters.
 
 Usage:
-    python -m simulation.simulator                  # 50,000 sims (default)
-    python -m simulation.simulator --n_sims 1000    # fast dev run
-    python -m simulation.simulator --seed 42        # reproducible
+    python -m simulation.simulator                         # 100,000 sims (default)
+    python -m simulation.simulator --n_sims 1000           # fast dev run
+    python -m simulation.simulator --seed 42               # reproducible
+    python -m simulation.simulator --model manual          # explicit model type
 """
 
 import argparse
@@ -17,7 +18,27 @@ from ingestion.load_to_duckdb import get_connection
 from simulation.model_inputs import load_inputs
 
 
-def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None) -> pd.DataFrame:
+def activity_discount(player: dict) -> float:
+    """
+    Returns a multiplier (0–1) applied to base mu to discount inactive players.
+
+    sg_overall_is_null is a proxy for inactivity — players not in DG top 500
+    lack sufficient recent competitive rounds to generate a rating.
+    Applied to both model_type='manual' and model_type='regression'.
+    """
+    sg_null = player.get("sg_overall_is_null", False)
+    recent_starts = player.get("recent_starts", 15)
+
+    if sg_null or recent_starts < 4:
+        return 0.60   # essentially inactive (Tiger situation)
+    elif recent_starts < 8:
+        return 0.82   # limited activity (some LIV players)
+    else:
+        return 1.00   # full-season active player, no change
+
+
+def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None,
+                   model_type: str = "manual") -> pd.DataFrame:
     """
     Vectorised Monte Carlo simulation of the Masters Tournament.
 
@@ -25,18 +46,21 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None) -> pd.Data
 
     Parameters
     ----------
-    df      : DataFrame from mart_player_model_inputs (one row per player)
-    n_sims  : number of tournament simulations
-    seed    : optional RNG seed for reproducibility
+    df         : DataFrame from mart_player_model_inputs (one row per player)
+    n_sims     : number of tournament simulations
+    seed       : optional RNG seed for reproducibility
+    model_type : 'manual' or 'regression' — stored in output for mart writes
 
     Returns
     -------
     DataFrame with one row per player and columns:
         datagolf_id, player_name, win_pct, top5_pct, top10_pct,
-        top25_pct, mc_pct, mu, sigma
+        top25_pct, mc_pct, mu, sigma, model_type
     """
-    mu = df["augusta_mu"].to_numpy()        # (N,)
-    sigma = df["player_sigma"].to_numpy()   # (N,)
+    # Apply activity discount to base mu before simulation
+    discounts = df.apply(lambda r: activity_discount(r.to_dict()), axis=1).to_numpy()
+    mu = df["augusta_mu"].to_numpy() * discounts  # (N,)
+    sigma = df["player_sigma"].to_numpy()          # (N,)
     N = len(mu)
     S = n_sims
 
@@ -104,15 +128,42 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None) -> pd.Data
         "mc_pct":      mc_pct,
         "mu":          mu,
         "sigma":       sigma,
+        "model_type":  model_type,
     })
 
 
 def write_results(results: pd.DataFrame, db_path=None) -> None:
-    """Write simulation results to main.mart_simulation_results in DuckDB."""
+    """
+    Write simulation results to main.mart_simulation_results in DuckDB.
+
+    Deletes existing rows for the given model_type then inserts fresh results,
+    so manual and regression runs coexist in the same table.
+    If the table doesn't exist or is missing the model_type column, recreates it.
+    """
     conn = get_connection(db_path)
-    conn.execute(
-        "CREATE OR REPLACE TABLE main.mart_simulation_results AS SELECT * FROM results"
-    )
+    model_type = results["model_type"].iloc[0]
+
+    # Check whether the table exists with the model_type column
+    has_model_type = conn.execute("""
+        SELECT count(*) FROM information_schema.columns
+        WHERE table_name = 'mart_simulation_results'
+          AND table_schema = 'main'
+          AND column_name = 'model_type'
+    """).fetchone()[0] > 0
+
+    if not has_model_type:
+        # Table missing or schema is stale — recreate from scratch
+        conn.execute(
+            "CREATE OR REPLACE TABLE main.mart_simulation_results AS SELECT * FROM results"
+        )
+    else:
+        # Delete stale rows for this model_type, then insert
+        conn.execute(
+            "DELETE FROM main.mart_simulation_results WHERE model_type = ?",
+            [model_type]
+        )
+        conn.execute("INSERT INTO main.mart_simulation_results SELECT * FROM results")
+
     conn.close()
 
 
@@ -140,15 +191,19 @@ def main():
                         help="Number of simulations (default: 100,000)")
     parser.add_argument("--seed", type=int, default=None,
                         help="RNG seed for reproducibility (default: random)")
+    parser.add_argument("--model", type=str, default="manual",
+                        choices=["manual", "regression"],
+                        help="Model type to run (default: manual)")
     args = parser.parse_args()
 
     print(f"Loading model inputs...", end=" ", flush=True)
     df = load_inputs()
     print(f"{len(df)} players")
 
-    print(f"Running {args.n_sims:,} simulations...", end=" ", flush=True)
+    print(f"Running {args.n_sims:,} simulations [{args.model}]...", end=" ", flush=True)
     t0 = time.perf_counter()
-    results = run_simulation(df, n_sims=args.n_sims, seed=args.seed)
+    results = run_simulation(df, n_sims=args.n_sims, seed=args.seed,
+                             model_type=args.model)
     elapsed = time.perf_counter() - t0
     print(f"done in {elapsed:.1f}s")
 
