@@ -224,7 +224,12 @@ Augusta_mu =
   dbt or simulation scripts
 - DataGolf ToS — personal non-commercial use only
 - Probabilities must sum to ~100% — validate after every sim run
-- Player sigma fallback: if <10 historical rounds, use 3.0
+- Player sigma fallback: if <8 historical rounds (i.e., <2 complete Masters appearances),
+  use 3.0. Players with ≥8 rounds (2+ full appearances) use their computed stddev.
+  Threshold chosen to capture multi-year Augusta consistency (e.g., Aberg: σ=1.996 from
+  2 top-10s) while avoiding single-year noise (4-round estimates range 0.96–6.88, and
+  6-round estimates like Kitayama's 4.885 inflate win% via artificial high-variance).
+  σ=3.0 ≈ tour average — neutral assumption for players with insufficient Augusta data.
 - Late field additions (e.g., Houston Open winner earns invite):
   run `python -m ingestion.refresh_field` — refreshes only the 5
   current-state tables (field, skill_ratings, dg_rankings,

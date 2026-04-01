@@ -10,7 +10,7 @@ with stats as (
 select
     datagolf_id,
     coalesce(
-        case when rounds_available >= 10 then raw_sigma end,
+        case when rounds_available >= 8 then raw_sigma end,
         3.0
     )               as player_sigma,
     rounds_available
