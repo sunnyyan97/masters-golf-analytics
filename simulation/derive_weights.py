@@ -138,6 +138,26 @@ def main():
 
     print(f"\nWeights saved → {out_path}")
 
+    # Save LOGO CV out-of-fold predictions for Phase 5 back-testing.
+    # These are genuinely out-of-sample: each fold's model never saw that year's data.
+    # backtest.py uses these for the regression model to avoid in-sample evaluation.
+    cv_rows = []
+    for train_idx, test_idx in logo.split(X_scaled, y, groups):
+        fold_model = Ridge(alpha=best_alpha)
+        fold_model.fit(X_scaled[train_idx], y[train_idx])
+        y_fold_pred = fold_model.predict(X_scaled[test_idx])
+        for i, pred in zip(test_idx, y_fold_pred):
+            cv_rows.append({
+                "datagolf_id": int(df.iloc[i]["datagolf_id"]),
+                "season":      int(df.iloc[i]["season"]),
+                "cv_pred_mu":  float(pred),
+            })
+
+    cv_path = Path(__file__).parent / "cv_predictions.json"
+    with open(cv_path, "w") as f:
+        json.dump(cv_rows, f, indent=2)
+    print(f"CV predictions saved → {cv_path}  ({len(cv_rows)} rows)")
+
 
 if __name__ == "__main__":
     main()
