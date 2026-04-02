@@ -1,12 +1,13 @@
 -- Training data for ridge regression: one row per player per Augusta appearance (2021+).
 --
--- Features use pre-tournament proxies to avoid data leakage:
---   sg_approach/putting/off_tee/around_green → current DataGolf skill ratings (same
---   value across all training years per player; acknowledged proxy limitation — no
---   historical point-in-time ratings available).
---   prior_augusta_sg, prior_appearances → leakage-safe window functions.
+-- Features are genuinely pre-tournament (no temporal leakage):
+--   dg_pred_win_pct → DataGolf's actual pre-tournament win probability from stg_pred_archive,
+--     joined on datagolf_id + season. This replaces the previous approach of using 2026
+--     static skill ratings (sg_app etc.) as a proxy across all training years, which was
+--     temporally contaminated. Players not in pred_archive get 0.0.
+--   prior_augusta_sg, prior_appearances → leakage-safe window functions on rounds.
 --   driving_dist_vs_avg → leakage-safe (only rounds from seasons < Y).
---   long_approach_sg → current value from int_driving_profile (no historical archive).
+--   long_approach_sg → current value from int_driving_profile (acknowledged proxy).
 --
 -- Target: sg_total (average strokes-gained for that year's Masters).
 
@@ -76,11 +77,8 @@ select
     wp.player_name,
     wp.season,
     wp.sg_total,
-    -- Current skill ratings as proxy for pre-tournament form (same per player across years)
-    coalesce(sr.sg_app,  0.0)                                               as sg_approach,
-    coalesce(sr.sg_putt, 0.0)                                               as sg_putting,
-    coalesce(sr.sg_ott,  0.0)                                               as sg_off_tee,
-    coalesce(sr.sg_arg,  0.0)                                               as sg_around_green,
+    -- Genuine pre-tournament skill signal from DataGolf predictions archive
+    coalesce(pa.win_pct, 0.0)                                               as dg_pred_win_pct,
     -- Leakage-safe prior Augusta signals
     coalesce(wp.prior_augusta_sg_raw, 0.0)                                  as prior_augusta_sg,
     coalesce(wp.prior_appearances_raw, 0)                                   as prior_appearances,
@@ -89,7 +87,7 @@ select
     -- Current long approach SG as proxy (no historical point-in-time available)
     coalesce(dp.long_approach_sg, 0.0)                                      as long_approach_sg
 from with_prior wp
-left join {{ ref('stg_skill_ratings') }}    sr on wp.datagolf_id = sr.datagolf_id
+left join {{ ref('stg_pred_archive') }}    pa on wp.datagolf_id = pa.datagolf_id and wp.season = pa.season
 left join prior_driving    pd on wp.datagolf_id = pd.datagolf_id and wp.season = pd.target_season
 left join field_avg_by_year fa on wp.season = fa.target_season
 left join {{ ref('int_driving_profile') }} dp on wp.datagolf_id = dp.datagolf_id

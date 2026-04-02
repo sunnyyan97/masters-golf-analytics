@@ -37,6 +37,8 @@ select
 
     -- Current overall skill
     r.sg_overall_rolling,
+    -- Proxy for dg_pred_win_pct in regression model (sg_overall_rolling in SG units)
+    coalesce(r.sg_overall_rolling, 0.0) as dg_overall_skill,
 
     -- Current SG components (for regression model)
     coalesce(sk.sg_app,  0.0) as sg_app,

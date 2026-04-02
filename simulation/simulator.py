@@ -21,26 +21,39 @@ from simulation.model_inputs import load_inputs
 
 
 def compute_regression_mu(df: pd.DataFrame) -> np.ndarray:
-    """Compute mu using ridge regression weights from regression_weights.json."""
+    """Compute mu using ridge regression weights from regression_weights.json.
+
+    dg_pred_win_pct was trained on pred_archive probabilities (0.01–0.15 range).
+    For 2026 prediction, dg_overall_skill (sg_overall_rolling, SG strokes units)
+    is normalized to the same mean/std as the training feature before the
+    coefficient is applied, preserving relative ordering while correcting scale.
+    """
     weights_path = Path(__file__).parent / "regression_weights.json"
     with open(weights_path) as f:
         w = json.load(f)
     coef = w["coefficients"]
     intercept = w["intercept"]
 
-    # Maps regression feature name → mart_player_model_inputs column name
-    feature_map = {
-        "sg_approach":         "sg_app",
-        "sg_putting":          "sg_putt",
-        "sg_off_tee":          "sg_ott",
-        "sg_around_green":     "sg_arg",
+    # Normalize dg_overall_skill to match training dg_pred_win_pct distribution
+    skill = df["dg_overall_skill"].fillna(0.0).to_numpy()
+    skill_std = skill.std() if skill.std() > 0 else 1.0
+    dg_normalized = (
+        (skill - skill.mean()) / skill_std
+        * w["dg_pred_win_pct_std"]
+        + w["dg_pred_win_pct_mean"]
+    )
+
+    mu = np.full(len(df), intercept)
+    mu = mu + coef["dg_pred_win_pct"] * dg_normalized
+
+    # Remaining features are already on the correct scale
+    other_features = {
         "prior_augusta_sg":    "augusta_sg_total",
         "prior_appearances":   "augusta_seasons_played",
         "driving_dist_vs_avg": "driving_dist_vs_avg",
         "long_approach_sg":    "long_approach_sg",
     }
-    mu = np.full(len(df), intercept)
-    for feat, col in feature_map.items():
+    for feat, col in other_features.items():
         mu = mu + coef[feat] * df[col].fillna(0.0).to_numpy()
     return mu
 
@@ -93,7 +106,17 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None,
     # Apply activity discount to base mu before simulation
     discounts = df.apply(lambda r: activity_discount(r.to_dict()), axis=1).to_numpy()
     mu = base_mu * discounts  # (N,)
+
+    # Sigma blending: pull player-specific sigma toward field mean to prevent
+    # consistent players (low sigma) from having their win% suppressed unrealistically.
+    # SIGMA_BLEND_ALPHA=0.6 means 60% player, 40% field mean.
+    # SIGMA_FLOOR=2.5 ensures no player falls below this minimum.
+    SIGMA_BLEND_ALPHA = 0.6
+    SIGMA_FLOOR = 2.5
     sigma = df["player_sigma"].to_numpy()          # (N,)
+    field_mean_sigma = sigma.mean()
+    sigma = SIGMA_BLEND_ALPHA * sigma + (1 - SIGMA_BLEND_ALPHA) * field_mean_sigma
+    sigma = np.maximum(sigma, SIGMA_FLOOR)
     N = len(mu)
     S = n_sims
 
