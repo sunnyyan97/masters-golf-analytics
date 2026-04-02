@@ -9,6 +9,7 @@ dbt-duckdb==1.9.1
 # Data manipulation
 pandas==2.2.3
 numpy==2.2.3
+scikit-learn>=1.4.0
 
 # Environment
 python-dotenv==1.1.0

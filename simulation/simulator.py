@@ -9,13 +9,40 @@ Usage:
 """
 
 import argparse
+import json
 import time
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 from ingestion.load_to_duckdb import get_connection
 from simulation.model_inputs import load_inputs
+
+
+def compute_regression_mu(df: pd.DataFrame) -> np.ndarray:
+    """Compute mu using ridge regression weights from regression_weights.json."""
+    weights_path = Path(__file__).parent / "regression_weights.json"
+    with open(weights_path) as f:
+        w = json.load(f)
+    coef = w["coefficients"]
+    intercept = w["intercept"]
+
+    # Maps regression feature name → mart_player_model_inputs column name
+    feature_map = {
+        "sg_approach":         "sg_app",
+        "sg_putting":          "sg_putt",
+        "sg_off_tee":          "sg_ott",
+        "sg_around_green":     "sg_arg",
+        "prior_augusta_sg":    "augusta_sg_total",
+        "prior_appearances":   "augusta_seasons_played",
+        "driving_dist_vs_avg": "driving_dist_vs_avg",
+        "long_approach_sg":    "long_approach_sg",
+    }
+    mu = np.full(len(df), intercept)
+    for feat, col in feature_map.items():
+        mu = mu + coef[feat] * df[col].fillna(0.0).to_numpy()
+    return mu
 
 
 def activity_discount(player: dict) -> float:
@@ -57,9 +84,15 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None,
         datagolf_id, player_name, win_pct, top5_pct, top10_pct,
         top25_pct, mc_pct, mu, sigma, model_type
     """
+    # Select mu source based on model type
+    if model_type == "regression":
+        base_mu = compute_regression_mu(df)
+    else:
+        base_mu = df["augusta_mu"].to_numpy()
+
     # Apply activity discount to base mu before simulation
     discounts = df.apply(lambda r: activity_discount(r.to_dict()), axis=1).to_numpy()
-    mu = df["augusta_mu"].to_numpy() * discounts  # (N,)
+    mu = base_mu * discounts  # (N,)
     sigma = df["player_sigma"].to_numpy()          # (N,)
     N = len(mu)
     S = n_sims

@@ -1,6 +1,7 @@
 with weighted_rounds as (
     select
         datagolf_id,
+        season,
         sg_total,
         sg_ott,
         sg_app,
@@ -18,6 +19,7 @@ select
     sum(sg_app  * weight) / nullif(sum(case when sg_app  is not null then weight end), 0)         as augusta_sg_app,
     sum(sg_arg  * weight) / nullif(sum(case when sg_arg  is not null then weight end), 0)         as augusta_sg_arg,
     sum(sg_putt * weight) / nullif(sum(case when sg_putt is not null then weight end), 0)         as augusta_sg_putt,
-    count(*)                                                                                       as rounds_played
+    count(*)                                                                                       as rounds_played,
+    count(distinct season)                                                                         as seasons_played
 from weighted_rounds
 group by datagolf_id
