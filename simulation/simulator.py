@@ -188,6 +188,38 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None,
     })
 
 
+_RANKINGS_PARQUET_QUERY = """
+SELECT
+    sim.datagolf_id,
+    sim.player_name,
+    inp.country,
+    pl.country_code,
+    inp.dg_rank,
+    sim.win_pct,
+    sim.top5_pct,
+    sim.top10_pct,
+    sim.mc_pct,
+    inp.augusta_fit_score,
+    dg.final_pred AS dg_win_pct,
+    sim.model_type
+FROM main.mart_simulation_results sim
+LEFT JOIN main.mart_player_model_inputs inp ON sim.datagolf_id = inp.datagolf_id
+LEFT JOIN main.stg_player_list          pl  ON sim.datagolf_id = pl.datagolf_id
+LEFT JOIN main.stg_player_decompositions dg  ON sim.datagolf_id = dg.datagolf_id
+"""
+
+
+def _export_rankings_parquet(conn, db_path) -> None:
+    """Export joined rankings data to a parquet file for Streamlit to consume.
+
+    This avoids Streamlit needing a DuckDB connection (which conflicts with
+    any open notebook kernel holding a write lock on the same file).
+    """
+    out_path = Path(db_path).parent / "rankings_cache.parquet"
+    df = conn.execute(_RANKINGS_PARQUET_QUERY).df()
+    df.to_parquet(out_path, index=False)
+
+
 def write_results(results: pd.DataFrame, db_path=None) -> None:
     """
     Write simulation results to main.mart_simulation_results in DuckDB.
@@ -195,9 +227,15 @@ def write_results(results: pd.DataFrame, db_path=None) -> None:
     Deletes existing rows for the given model_type then inserts fresh results,
     so manual and regression runs coexist in the same table.
     If the table doesn't exist or is missing the model_type column, recreates it.
+
+    Also exports a combined parquet cache for Streamlit consumption.
     """
     conn = get_connection(db_path)
     model_type = results["model_type"].iloc[0]
+
+    # Resolve db_path for parquet export (mirrors get_connection default)
+    if db_path is None:
+        db_path = Path(__file__).parent.parent / "data" / "masters.duckdb"
 
     # Check whether the table exists with the model_type column
     has_model_type = conn.execute("""
@@ -220,6 +258,7 @@ def write_results(results: pd.DataFrame, db_path=None) -> None:
         )
         conn.execute("INSERT INTO main.mart_simulation_results SELECT * FROM results")
 
+    _export_rankings_parquet(conn, db_path)
     conn.close()
 
 
