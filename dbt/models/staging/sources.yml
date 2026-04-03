@@ -12,3 +12,4 @@ sources:
       - name: masters_rounds
       - name: pred_archive
       - name: player_decompositions
+      - name: current_dg_predictions

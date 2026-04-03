@@ -192,12 +192,12 @@ SELECT
     sim.top10_pct,
     sim.mc_pct,
     inp.augusta_fit_score,
-    dg.final_pred AS dg_win_pct,
+    cdg.win_pct / 100.0 AS dg_win_pct,
     sim.model_type
 FROM main.mart_simulation_results sim
-LEFT JOIN main.mart_player_model_inputs inp ON sim.datagolf_id = inp.datagolf_id
-LEFT JOIN main.stg_player_list          pl  ON sim.datagolf_id = pl.datagolf_id
-LEFT JOIN main.stg_player_decompositions dg  ON sim.datagolf_id = dg.datagolf_id
+LEFT JOIN main.mart_player_model_inputs      inp ON sim.datagolf_id = inp.datagolf_id
+LEFT JOIN main.stg_player_list               pl  ON sim.datagolf_id = pl.datagolf_id
+LEFT JOIN main.stg_current_dg_predictions    cdg ON sim.datagolf_id = cdg.datagolf_id
 """
 
 

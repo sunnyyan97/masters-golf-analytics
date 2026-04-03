@@ -60,3 +60,7 @@ def load_pred_archive(conn, records: list[dict]) -> int:
 
 def load_player_decompositions(conn, records: list[dict]) -> int:
     return _write_table(conn, "player_decompositions", records)
+
+
+def load_current_dg_predictions(conn, records: list[dict]) -> int:
+    return _write_table(conn, "current_dg_predictions", records)
