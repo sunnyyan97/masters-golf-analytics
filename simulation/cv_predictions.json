@@ -1,2242 +1,1917 @@
 [
   {
-    "datagolf_id": 18417,
+    "datagolf_id": 14735,
     "season": 2021,
-    "cv_pred_mu": -0.4015945150972625
-  },
-  {
-    "datagolf_id": 17576,
-    "season": 2021,
-    "cv_pred_mu": -0.625380691658669
-  },
-  {
-    "datagolf_id": 19895,
-    "season": 2021,
-    "cv_pred_mu": 0.7731868936352089
-  },
-  {
-    "datagolf_id": 13562,
-    "season": 2021,
-    "cv_pred_mu": -0.23423026981371925
-  },
-  {
-    "datagolf_id": 7108,
-    "season": 2021,
-    "cv_pred_mu": -1.2649495215230817
-  },
-  {
-    "datagolf_id": 18841,
-    "season": 2021,
-    "cv_pred_mu": -0.045845736886598265
-  },
-  {
-    "datagolf_id": 14796,
-    "season": 2021,
-    "cv_pred_mu": -0.6601996868610898
-  },
-  {
-    "datagolf_id": 22085,
-    "season": 2021,
-    "cv_pred_mu": -0.6355734241164469
-  },
-  {
-    "datagolf_id": 13900,
-    "season": 2021,
-    "cv_pred_mu": -1.1834902820055375
-  },
-  {
-    "datagolf_id": 18079,
-    "season": 2021,
-    "cv_pred_mu": -0.42747083423016385
-  },
-  {
-    "datagolf_id": 14609,
-    "season": 2021,
-    "cv_pred_mu": -0.3202294333253288
-  },
-  {
-    "datagolf_id": 12294,
-    "season": 2021,
-    "cv_pred_mu": -0.5731763184118521
-  },
-  {
-    "datagolf_id": 11676,
-    "season": 2021,
-    "cv_pred_mu": 0.22512944125758894
-  },
-  {
-    "datagolf_id": 15466,
-    "season": 2021,
-    "cv_pred_mu": 0.5516455228554198
-  },
-  {
-    "datagolf_id": 17606,
-    "season": 2021,
-    "cv_pred_mu": -0.27128049386251873
-  },
-  {
-    "datagolf_id": 7655,
-    "season": 2021,
-    "cv_pred_mu": -0.4553152067526282
-  },
-  {
-    "datagolf_id": 19428,
-    "season": 2021,
-    "cv_pred_mu": -0.6792028618293593
-  },
-  {
-    "datagolf_id": 5994,
-    "season": 2021,
-    "cv_pred_mu": -0.7466638710011819
-  },
-  {
-    "datagolf_id": 19195,
-    "season": 2021,
-    "cv_pred_mu": 1.7341727287423647
-  },
-  {
-    "datagolf_id": 23542,
-    "season": 2021,
-    "cv_pred_mu": -0.9139882047506818
-  },
-  {
-    "datagolf_id": 12577,
-    "season": 2021,
-    "cv_pred_mu": -0.5414408894148903
+    "cv_pred_mu": -0.12886935519670456
   },
   {
     "datagolf_id": 20770,
     "season": 2021,
-    "cv_pred_mu": -0.7559810735566314
-  },
-  {
-    "datagolf_id": 14577,
-    "season": 2021,
-    "cv_pred_mu": -0.7951835024457474
-  },
-  {
-    "datagolf_id": 7649,
-    "season": 2021,
-    "cv_pred_mu": -0.8334384271180648
-  },
-  {
-    "datagolf_id": 20730,
-    "season": 2021,
-    "cv_pred_mu": -1.0039016099431917
-  },
-  {
-    "datagolf_id": 18238,
-    "season": 2021,
-    "cv_pred_mu": -0.8653154690872802
-  },
-  {
-    "datagolf_id": 16243,
-    "season": 2021,
-    "cv_pred_mu": 0.17221775585718013
-  },
-  {
-    "datagolf_id": 6093,
-    "season": 2021,
-    "cv_pred_mu": -0.9471893513728065
-  },
-  {
-    "datagolf_id": 14735,
-    "season": 2021,
-    "cv_pred_mu": -0.8235333557233835
-  },
-  {
-    "datagolf_id": 7398,
-    "season": 2021,
-    "cv_pred_mu": -1.192110579740584
-  },
-  {
-    "datagolf_id": 11276,
-    "season": 2021,
-    "cv_pred_mu": -0.8457807709532486
-  },
-  {
-    "datagolf_id": 10091,
-    "season": 2021,
-    "cv_pred_mu": 0.5572315439304836
-  },
-  {
-    "datagolf_id": 12337,
-    "season": 2021,
-    "cv_pred_mu": -0.8053976330458874
+    "cv_pred_mu": -0.45714572783426094
   },
   {
     "datagolf_id": 20706,
     "season": 2021,
-    "cv_pred_mu": -1.581768639898919
+    "cv_pred_mu": -0.40694364475060174
   },
   {
-    "datagolf_id": 6430,
+    "datagolf_id": 20730,
     "season": 2021,
-    "cv_pred_mu": -0.37831272289092
-  },
-  {
-    "datagolf_id": 8825,
-    "season": 2021,
-    "cv_pred_mu": -0.8908305684918121
-  },
-  {
-    "datagolf_id": 14139,
-    "season": 2021,
-    "cv_pred_mu": 0.9154439493901025
-  },
-  {
-    "datagolf_id": 17646,
-    "season": 2021,
-    "cv_pred_mu": -0.10897363857580328
-  },
-  {
-    "datagolf_id": 18103,
-    "season": 2021,
-    "cv_pred_mu": -0.8757632847166281
-  },
-  {
-    "datagolf_id": 15330,
-    "season": 2021,
-    "cv_pred_mu": -0.8283643530137803
-  },
-  {
-    "datagolf_id": 17538,
-    "season": 2021,
-    "cv_pred_mu": -0.7951193493384008
-  },
-  {
-    "datagolf_id": 23323,
-    "season": 2021,
-    "cv_pred_mu": -0.9380485045727094
-  },
-  {
-    "datagolf_id": 15556,
-    "season": 2021,
-    "cv_pred_mu": -1.0328784445320784
-  },
-  {
-    "datagolf_id": 5689,
-    "season": 2021,
-    "cv_pred_mu": -0.9570430337601086
-  },
-  {
-    "datagolf_id": 19841,
-    "season": 2021,
-    "cv_pred_mu": 1.0282369591596419
-  },
-  {
-    "datagolf_id": 6986,
-    "season": 2021,
-    "cv_pred_mu": -1.0978291638539261
-  },
-  {
-    "datagolf_id": 7672,
-    "season": 2021,
-    "cv_pred_mu": -0.5339368351928804
-  },
-  {
-    "datagolf_id": 12422,
-    "season": 2021,
-    "cv_pred_mu": 1.281076414626333
-  },
-  {
-    "datagolf_id": 14838,
-    "season": 2021,
-    "cv_pred_mu": -0.29194816827362857
-  },
-  {
-    "datagolf_id": 14706,
-    "season": 2021,
-    "cv_pred_mu": -1.108308778522424
+    "cv_pred_mu": -0.7765795717240963
   },
   {
     "datagolf_id": 15475,
     "season": 2021,
-    "cv_pred_mu": -1.0233432131349147
-  },
-  {
-    "datagolf_id": 9586,
-    "season": 2021,
-    "cv_pred_mu": -1.1171643392010795
-  },
-  {
-    "datagolf_id": 1547,
-    "season": 2021,
-    "cv_pred_mu": -0.48584101977972144
-  },
-  {
-    "datagolf_id": 4052,
-    "season": 2021,
-    "cv_pred_mu": -1.068225841954797
-  },
-  {
-    "datagolf_id": 14636,
-    "season": 2021,
-    "cv_pred_mu": -0.24640358950129637
-  },
-  {
-    "datagolf_id": 1435,
-    "season": 2021,
-    "cv_pred_mu": -0.6807400568327691
-  },
-  {
-    "datagolf_id": 7452,
-    "season": 2021,
-    "cv_pred_mu": -0.9185977660007383
-  },
-  {
-    "datagolf_id": 7334,
-    "season": 2021,
-    "cv_pred_mu": -0.542429598228765
-  },
-  {
-    "datagolf_id": 11049,
-    "season": 2021,
-    "cv_pred_mu": 0.18139385321463042
+    "cv_pred_mu": -0.5646660669702751
   },
   {
     "datagolf_id": 6169,
     "season": 2021,
-    "cv_pred_mu": -0.431683171853843
+    "cv_pred_mu": -0.39118251414505384
   },
   {
-    "datagolf_id": 9771,
+    "datagolf_id": 15330,
     "season": 2021,
-    "cv_pred_mu": -0.02404351472040961
-  },
-  {
-    "datagolf_id": 8605,
-    "season": 2021,
-    "cv_pred_mu": -1.0416171626961304
-  },
-  {
-    "datagolf_id": 17488,
-    "season": 2021,
-    "cv_pred_mu": -0.6743290958007313
-  },
-  {
-    "datagolf_id": 25919,
-    "season": 2021,
-    "cv_pred_mu": -0.9913407083819472
-  },
-  {
-    "datagolf_id": 5665,
-    "season": 2021,
-    "cv_pred_mu": -1.1391524619988862
-  },
-  {
-    "datagolf_id": 15856,
-    "season": 2021,
-    "cv_pred_mu": -0.8528153345448481
-  },
-  {
-    "datagolf_id": 12920,
-    "season": 2021,
-    "cv_pred_mu": -1.3831446646582077
-  },
-  {
-    "datagolf_id": 11328,
-    "season": 2021,
-    "cv_pred_mu": -0.762640846921024
-  },
-  {
-    "datagolf_id": 12425,
-    "season": 2021,
-    "cv_pred_mu": -1.1355230547232256
-  },
-  {
-    "datagolf_id": 7820,
-    "season": 2021,
-    "cv_pred_mu": -1.2293021835666909
-  },
-  {
-    "datagolf_id": 11955,
-    "season": 2021,
-    "cv_pred_mu": -0.9368594665730863
-  },
-  {
-    "datagolf_id": 5513,
-    "season": 2021,
-    "cv_pred_mu": -1.1626606258015677
-  },
-  {
-    "datagolf_id": 7293,
-    "season": 2021,
-    "cv_pred_mu": -0.8220308233997123
-  },
-  {
-    "datagolf_id": 26912,
-    "season": 2021,
-    "cv_pred_mu": -1.0180234614169867
-  },
-  {
-    "datagolf_id": 44,
-    "season": 2021,
-    "cv_pred_mu": -1.2534190622571344
-  },
-  {
-    "datagolf_id": 27984,
-    "season": 2021,
-    "cv_pred_mu": -1.0180234614169867
-  },
-  {
-    "datagolf_id": 139,
-    "season": 2021,
-    "cv_pred_mu": -1.438800887303692
-  },
-  {
-    "datagolf_id": 3485,
-    "season": 2021,
-    "cv_pred_mu": -1.9899771382692473
+    "cv_pred_mu": -0.8299376406282067
   },
   {
     "datagolf_id": 9531,
     "season": 2021,
-    "cv_pred_mu": -0.9843431642368647
+    "cv_pred_mu": -0.7144841620450374
   },
   {
-    "datagolf_id": 653,
+    "datagolf_id": 5994,
     "season": 2021,
-    "cv_pred_mu": -1.8981144297749881
+    "cv_pred_mu": -0.848195708477061
   },
   {
-    "datagolf_id": 14852,
+    "datagolf_id": 9586,
     "season": 2021,
-    "cv_pred_mu": -1.0069807410300615
+    "cv_pred_mu": -1.1294564918542145
   },
   {
-    "datagolf_id": 334,
+    "datagolf_id": 1435,
     "season": 2021,
-    "cv_pred_mu": -1.8981144297749881
+    "cv_pred_mu": -0.8804035371750843
   },
   {
-    "datagolf_id": 5951,
+    "datagolf_id": 8605,
     "season": 2021,
-    "cv_pred_mu": -1.0152627813202555
+    "cv_pred_mu": -1.3113434067420755
   },
   {
-    "datagolf_id": 12946,
+    "datagolf_id": 12425,
     "season": 2021,
-    "cv_pred_mu": -0.9854474362755573
+    "cv_pred_mu": -1.3431450887799739
   },
   {
-    "datagolf_id": 290,
+    "datagolf_id": 7649,
     "season": 2021,
-    "cv_pred_mu": -1.2791358217936235
+    "cv_pred_mu": -0.3064955150298244
   },
   {
-    "datagolf_id": 12846,
+    "datagolf_id": 11049,
     "season": 2021,
-    "cv_pred_mu": -1.0141585092815628
+    "cv_pred_mu": -0.21029042741401083
   },
   {
-    "datagolf_id": 294,
+    "datagolf_id": 25919,
     "season": 2021,
-    "cv_pred_mu": -1.163212761820914
+    "cv_pred_mu": -1.176177790644585
   },
   {
-    "datagolf_id": 24450,
+    "datagolf_id": 4052,
     "season": 2021,
-    "cv_pred_mu": -1.0174713253976404
+    "cv_pred_mu": -1.0741868761941036
   },
   {
-    "datagolf_id": 17511,
-    "season": 2022,
-    "cv_pred_mu": -0.6924078036498086
+    "datagolf_id": 7452,
+    "season": 2021,
+    "cv_pred_mu": -0.9551762065495218
   },
   {
-    "datagolf_id": 7399,
-    "season": 2022,
-    "cv_pred_mu": -1.002745324065348
+    "datagolf_id": 7820,
+    "season": 2021,
+    "cv_pred_mu": -1.7717596254574235
   },
   {
-    "datagolf_id": 14578,
-    "season": 2022,
-    "cv_pred_mu": -0.6123868381483747
+    "datagolf_id": 14706,
+    "season": 2021,
+    "cv_pred_mu": -2.751717774461722
   },
   {
-    "datagolf_id": 16602,
-    "season": 2022,
-    "cv_pred_mu": -0.68059944893726
+    "datagolf_id": 23323,
+    "season": 2021,
+    "cv_pred_mu": 0.06364666705084654
   },
   {
-    "datagolf_id": 17536,
-    "season": 2022,
-    "cv_pred_mu": -0.6886910947708247
+    "datagolf_id": 17606,
+    "season": 2021,
+    "cv_pred_mu": -0.6286858474867687
   },
   {
-    "datagolf_id": 18580,
-    "season": 2022,
-    "cv_pred_mu": -0.6257906996284986
+    "datagolf_id": 18238,
+    "season": 2021,
+    "cv_pred_mu": -0.6220917774224848
   },
   {
-    "datagolf_id": 19483,
-    "season": 2022,
-    "cv_pred_mu": -0.6706426256885737
+    "datagolf_id": 15556,
+    "season": 2021,
+    "cv_pred_mu": -0.38726703267618645
   },
   {
-    "datagolf_id": 26651,
-    "season": 2022,
-    "cv_pred_mu": -0.9412072673136076
+    "datagolf_id": 7672,
+    "season": 2021,
+    "cv_pred_mu": -0.42389454705553653
   },
   {
-    "datagolf_id": 17786,
-    "season": 2022,
-    "cv_pred_mu": -1.0458553950740272
+    "datagolf_id": 7655,
+    "season": 2021,
+    "cv_pred_mu": -0.5092907557369928
   },
   {
-    "datagolf_id": 13944,
-    "season": 2022,
-    "cv_pred_mu": -0.7186076163570727
+    "datagolf_id": 12337,
+    "season": 2021,
+    "cv_pred_mu": -0.9414290305335721
   },
   {
-    "datagolf_id": 15575,
-    "season": 2022,
-    "cv_pred_mu": -0.7661886547815401
+    "datagolf_id": 11328,
+    "season": 2021,
+    "cv_pred_mu": -1.0312127970855225
   },
   {
-    "datagolf_id": 16841,
-    "season": 2022,
-    "cv_pred_mu": -0.8572683216427373
+    "datagolf_id": 14609,
+    "season": 2021,
+    "cv_pred_mu": 0.4738061263771195
   },
   {
-    "datagolf_id": 17550,
-    "season": 2022,
-    "cv_pred_mu": -0.8896717464491475
+    "datagolf_id": 14577,
+    "season": 2021,
+    "cv_pred_mu": -0.2529260029402134
   },
   {
-    "datagolf_id": 10104,
-    "season": 2022,
-    "cv_pred_mu": -0.6486395045655324
+    "datagolf_id": 9771,
+    "season": 2021,
+    "cv_pred_mu": 0.19394279789611957
   },
   {
-    "datagolf_id": 17064,
-    "season": 2022,
-    "cv_pred_mu": -1.0703179579139146
+    "datagolf_id": 19428,
+    "season": 2021,
+    "cv_pred_mu": -0.3373893053851389
   },
   {
-    "datagolf_id": 5716,
-    "season": 2022,
-    "cv_pred_mu": -1.182815522363669
+    "datagolf_id": 11276,
+    "season": 2021,
+    "cv_pred_mu": -0.5178598525913265
   },
   {
-    "datagolf_id": 24342,
-    "season": 2022,
-    "cv_pred_mu": -1.0027910367039423
+    "datagolf_id": 18417,
+    "season": 2021,
+    "cv_pred_mu": 0.7590047704279651
   },
   {
-    "datagolf_id": 14140,
-    "season": 2022,
-    "cv_pred_mu": -0.864628565258795
+    "datagolf_id": 10091,
+    "season": 2021,
+    "cv_pred_mu": 0.505187017234997
   },
   {
-    "datagolf_id": 21074,
-    "season": 2022,
-    "cv_pred_mu": -0.9600284156687384
+    "datagolf_id": 19895,
+    "season": 2021,
+    "cv_pred_mu": 0.5471978037794912
   },
   {
-    "datagolf_id": 13497,
-    "season": 2022,
-    "cv_pred_mu": -1.1638251694054205
+    "datagolf_id": 17646,
+    "season": 2021,
+    "cv_pred_mu": 0.6455535163395182
   },
   {
-    "datagolf_id": 7960,
-    "season": 2022,
-    "cv_pred_mu": -0.8228900430087389
+    "datagolf_id": 19841,
+    "season": 2021,
+    "cv_pred_mu": 0.1289017693591037
   },
   {
-    "datagolf_id": 19729,
-    "season": 2022,
-    "cv_pred_mu": -1.2572003792702933
+    "datagolf_id": 13562,
+    "season": 2021,
+    "cv_pred_mu": 0.6130173024244102
   },
   {
-    "datagolf_id": 17357,
-    "season": 2022,
-    "cv_pred_mu": -0.9638822624635048
+    "datagolf_id": 18841,
+    "season": 2021,
+    "cv_pred_mu": 0.14437688896425077
+  },
+  {
+    "datagolf_id": 14636,
+    "season": 2021,
+    "cv_pred_mu": 0.0907926975731353
+  },
+  {
+    "datagolf_id": 14139,
+    "season": 2021,
+    "cv_pred_mu": 0.4269802550199612
+  },
+  {
+    "datagolf_id": 6430,
+    "season": 2021,
+    "cv_pred_mu": -0.027186769245736042
+  },
+  {
+    "datagolf_id": 13900,
+    "season": 2021,
+    "cv_pred_mu": -0.3357923643853394
+  },
+  {
+    "datagolf_id": 6093,
+    "season": 2021,
+    "cv_pred_mu": -0.2167648906034937
+  },
+  {
+    "datagolf_id": 18079,
+    "season": 2021,
+    "cv_pred_mu": -0.19766456331170992
+  },
+  {
+    "datagolf_id": 17576,
+    "season": 2021,
+    "cv_pred_mu": -0.23006210754504194
+  },
+  {
+    "datagolf_id": 14838,
+    "season": 2021,
+    "cv_pred_mu": -0.008182879008338223
+  },
+  {
+    "datagolf_id": 14796,
+    "season": 2021,
+    "cv_pred_mu": -0.35242628069309445
+  },
+  {
+    "datagolf_id": 16243,
+    "season": 2021,
+    "cv_pred_mu": -0.21578381214119924
+  },
+  {
+    "datagolf_id": 8825,
+    "season": 2021,
+    "cv_pred_mu": -0.36051951219626066
+  },
+  {
+    "datagolf_id": 11676,
+    "season": 2021,
+    "cv_pred_mu": 0.06519249236331948
+  },
+  {
+    "datagolf_id": 15856,
+    "season": 2021,
+    "cv_pred_mu": -0.022952082208098634
+  },
+  {
+    "datagolf_id": 5689,
+    "season": 2021,
+    "cv_pred_mu": -0.5598800505852819
+  },
+  {
+    "datagolf_id": 12422,
+    "season": 2021,
+    "cv_pred_mu": -0.5623761958824376
+  },
+  {
+    "datagolf_id": 7398,
+    "season": 2021,
+    "cv_pred_mu": -0.6226798047718436
+  },
+  {
+    "datagolf_id": 6986,
+    "season": 2021,
+    "cv_pred_mu": -0.6851723530685482
+  },
+  {
+    "datagolf_id": 12920,
+    "season": 2021,
+    "cv_pred_mu": -1.0911556900375508
+  },
+  {
+    "datagolf_id": 7108,
+    "season": 2021,
+    "cv_pred_mu": -0.8342882195070674
+  },
+  {
+    "datagolf_id": 11955,
+    "season": 2021,
+    "cv_pred_mu": -0.811816100033076
+  },
+  {
+    "datagolf_id": 23542,
+    "season": 2021,
+    "cv_pred_mu": -1.357325671074876
+  },
+  {
+    "datagolf_id": 12577,
+    "season": 2021,
+    "cv_pred_mu": -0.673243955071452
+  },
+  {
+    "datagolf_id": 1547,
+    "season": 2021,
+    "cv_pred_mu": -0.8257469558774643
+  },
+  {
+    "datagolf_id": 15466,
+    "season": 2021,
+    "cv_pred_mu": 0.22765587202678728
+  },
+  {
+    "datagolf_id": 17488,
+    "season": 2021,
+    "cv_pred_mu": 0.0070131623108022345
+  },
+  {
+    "datagolf_id": 17538,
+    "season": 2021,
+    "cv_pred_mu": -0.6259399590808521
+  },
+  {
+    "datagolf_id": 7334,
+    "season": 2021,
+    "cv_pred_mu": -0.8796793909469328
+  },
+  {
+    "datagolf_id": 22085,
+    "season": 2021,
+    "cv_pred_mu": 0.05733077205717424
+  },
+  {
+    "datagolf_id": 18103,
+    "season": 2021,
+    "cv_pred_mu": -0.10524519759033488
+  },
+  {
+    "datagolf_id": 19195,
+    "season": 2021,
+    "cv_pred_mu": 0.7343732288392165
+  },
+  {
+    "datagolf_id": 12294,
+    "season": 2021,
+    "cv_pred_mu": 0.4953604550948608
   },
   {
     "datagolf_id": 7649,
     "season": 2022,
-    "cv_pred_mu": -0.3357477105218313
-  },
-  {
-    "datagolf_id": 14706,
-    "season": 2022,
-    "cv_pred_mu": -1.8366963333949426
-  },
-  {
-    "datagolf_id": 4052,
-    "season": 2022,
-    "cv_pred_mu": -1.2371027824143552
-  },
-  {
-    "datagolf_id": 7452,
-    "season": 2022,
-    "cv_pred_mu": -0.7939636126068215
+    "cv_pred_mu": -0.15237714230818303
   },
   {
     "datagolf_id": 11049,
     "season": 2022,
-    "cv_pred_mu": -0.43844328822765005
+    "cv_pred_mu": -0.24210448113425856
   },
   {
-    "datagolf_id": 25919,
+    "datagolf_id": 4052,
     "season": 2022,
-    "cv_pred_mu": -1.6377129077938961
+    "cv_pred_mu": -0.9416374632749959
   },
   {
-    "datagolf_id": 5665,
+    "datagolf_id": 7452,
     "season": 2022,
-    "cv_pred_mu": -0.5756688103967915
+    "cv_pred_mu": -0.885930445833857
   },
   {
     "datagolf_id": 7820,
     "season": 2022,
-    "cv_pred_mu": -0.9417252839487347
+    "cv_pred_mu": -1.656604861884611
   },
   {
-    "datagolf_id": 17606,
+    "datagolf_id": 14706,
     "season": 2022,
-    "cv_pred_mu": -0.5387128879074353
-  },
-  {
-    "datagolf_id": 7655,
-    "season": 2022,
-    "cv_pred_mu": -0.8018317995107296
-  },
-  {
-    "datagolf_id": 23542,
-    "season": 2022,
-    "cv_pred_mu": -0.1753567316223173
-  },
-  {
-    "datagolf_id": 18238,
-    "season": 2022,
-    "cv_pred_mu": -0.8217730535163932
-  },
-  {
-    "datagolf_id": 12337,
-    "season": 2022,
-    "cv_pred_mu": -0.7562845555125222
-  },
-  {
-    "datagolf_id": 18103,
-    "season": 2022,
-    "cv_pred_mu": -1.0963501524916772
+    "cv_pred_mu": -3.052467656753686
   },
   {
     "datagolf_id": 23323,
     "season": 2022,
-    "cv_pred_mu": -0.4487716839444267
+    "cv_pred_mu": 0.24315955941505282
+  },
+  {
+    "datagolf_id": 17606,
+    "season": 2022,
+    "cv_pred_mu": -0.29271704485459105
   },
   {
     "datagolf_id": 15556,
     "season": 2022,
-    "cv_pred_mu": -1.018494493419865
+    "cv_pred_mu": -0.2414655752392836
   },
   {
     "datagolf_id": 7672,
     "season": 2022,
-    "cv_pred_mu": -0.46391787036872495
+    "cv_pred_mu": -0.31476548173550756
+  },
+  {
+    "datagolf_id": 7655,
+    "season": 2022,
+    "cv_pred_mu": -0.3193378487013978
+  },
+  {
+    "datagolf_id": 12337,
+    "season": 2022,
+    "cv_pred_mu": -0.9154137584908333
   },
   {
     "datagolf_id": 11328,
     "season": 2022,
-    "cv_pred_mu": -1.0019406235590154
+    "cv_pred_mu": -1.134159095148898
   },
   {
     "datagolf_id": 14609,
     "season": 2022,
-    "cv_pred_mu": -0.19989848575891905
+    "cv_pred_mu": 0.6846878759194048
   },
   {
     "datagolf_id": 19428,
     "season": 2022,
-    "cv_pred_mu": 0.47232099430956187
-  },
-  {
-    "datagolf_id": 12577,
-    "season": 2022,
-    "cv_pred_mu": -0.13848528594991966
+    "cv_pred_mu": 0.019835816675096513
   },
   {
     "datagolf_id": 11276,
     "season": 2022,
-    "cv_pred_mu": -0.7686792757844494
+    "cv_pred_mu": -0.47607050380879756
   },
   {
     "datagolf_id": 18417,
     "season": 2022,
-    "cv_pred_mu": 0.8889897471004679
-  },
-  {
-    "datagolf_id": 17576,
-    "season": 2022,
-    "cv_pred_mu": -0.2789501304942353
-  },
-  {
-    "datagolf_id": 19895,
-    "season": 2022,
-    "cv_pred_mu": 0.9978285390457261
-  },
-  {
-    "datagolf_id": 13562,
-    "season": 2022,
-    "cv_pred_mu": 0.5094880401673768
-  },
-  {
-    "datagolf_id": 18841,
-    "season": 2022,
-    "cv_pred_mu": 0.35080525127661244
-  },
-  {
-    "datagolf_id": 14796,
-    "season": 2022,
-    "cv_pred_mu": -0.4600070906000586
-  },
-  {
-    "datagolf_id": 22085,
-    "season": 2022,
-    "cv_pred_mu": -0.2821111220940199
-  },
-  {
-    "datagolf_id": 13900,
-    "season": 2022,
-    "cv_pred_mu": -0.23882337763159905
-  },
-  {
-    "datagolf_id": 18079,
-    "season": 2022,
-    "cv_pred_mu": -0.02492888786123537
-  },
-  {
-    "datagolf_id": 12294,
-    "season": 2022,
-    "cv_pred_mu": -0.493005754577301
-  },
-  {
-    "datagolf_id": 11676,
-    "season": 2022,
-    "cv_pred_mu": 0.19219505245243673
-  },
-  {
-    "datagolf_id": 15466,
-    "season": 2022,
-    "cv_pred_mu": 0.2273156006728677
-  },
-  {
-    "datagolf_id": 19195,
-    "season": 2022,
-    "cv_pred_mu": 1.7651857661320656
-  },
-  {
-    "datagolf_id": 16243,
-    "season": 2022,
-    "cv_pred_mu": 0.10514478011707495
-  },
-  {
-    "datagolf_id": 6093,
-    "season": 2022,
-    "cv_pred_mu": -0.593839686138561
-  },
-  {
-    "datagolf_id": 7398,
-    "season": 2022,
-    "cv_pred_mu": -0.8394826144689995
+    "cv_pred_mu": 1.0113887700900899
   },
   {
     "datagolf_id": 10091,
     "season": 2022,
-    "cv_pred_mu": 0.6381073668859986
+    "cv_pred_mu": 0.6020465721403256
   },
   {
-    "datagolf_id": 6430,
+    "datagolf_id": 19895,
     "season": 2022,
-    "cv_pred_mu": -0.26585991043034357
-  },
-  {
-    "datagolf_id": 8825,
-    "season": 2022,
-    "cv_pred_mu": -0.6465380037165037
-  },
-  {
-    "datagolf_id": 14139,
-    "season": 2022,
-    "cv_pred_mu": 1.2646296626019544
+    "cv_pred_mu": 0.6787934957168886
   },
   {
     "datagolf_id": 17646,
     "season": 2022,
-    "cv_pred_mu": 0.09426112312651225
-  },
-  {
-    "datagolf_id": 17538,
-    "season": 2022,
-    "cv_pred_mu": -0.6455949651103647
-  },
-  {
-    "datagolf_id": 5689,
-    "season": 2022,
-    "cv_pred_mu": -0.6651221810108283
+    "cv_pred_mu": 0.7717091249524216
   },
   {
     "datagolf_id": 19841,
     "season": 2022,
-    "cv_pred_mu": 0.23787414053014344
+    "cv_pred_mu": 0.23360661029305776
   },
   {
-    "datagolf_id": 6986,
+    "datagolf_id": 13562,
     "season": 2022,
-    "cv_pred_mu": -1.3259863837205363
+    "cv_pred_mu": 0.7511847286322146
   },
   {
-    "datagolf_id": 12422,
+    "datagolf_id": 18841,
     "season": 2022,
-    "cv_pred_mu": 0.3180220966753987
-  },
-  {
-    "datagolf_id": 14838,
-    "season": 2022,
-    "cv_pred_mu": -0.4484837459785762
+    "cv_pred_mu": 0.33992095346876816
   },
   {
     "datagolf_id": 14636,
     "season": 2022,
-    "cv_pred_mu": 0.10981400181179435
+    "cv_pred_mu": 0.3091498886770061
   },
   {
-    "datagolf_id": 7334,
+    "datagolf_id": 14139,
     "season": 2022,
-    "cv_pred_mu": -0.37266067813811093
+    "cv_pred_mu": 0.44793941104897106
   },
   {
-    "datagolf_id": 17488,
+    "datagolf_id": 6430,
     "season": 2022,
-    "cv_pred_mu": -1.6539803330066745
+    "cv_pred_mu": 0.1826898696756389
+  },
+  {
+    "datagolf_id": 13900,
+    "season": 2022,
+    "cv_pred_mu": -0.00969828146477178
+  },
+  {
+    "datagolf_id": 6093,
+    "season": 2022,
+    "cv_pred_mu": 0.12197254152827805
+  },
+  {
+    "datagolf_id": 17576,
+    "season": 2022,
+    "cv_pred_mu": 0.06079001907685125
+  },
+  {
+    "datagolf_id": 14838,
+    "season": 2022,
+    "cv_pred_mu": 0.21499073206201422
+  },
+  {
+    "datagolf_id": 14796,
+    "season": 2022,
+    "cv_pred_mu": -0.036554287300824856
+  },
+  {
+    "datagolf_id": 16243,
+    "season": 2022,
+    "cv_pred_mu": -0.10975670806818894
+  },
+  {
+    "datagolf_id": 8825,
+    "season": 2022,
+    "cv_pred_mu": -0.13991405840775356
+  },
+  {
+    "datagolf_id": 11676,
+    "season": 2022,
+    "cv_pred_mu": 0.06726387500963263
   },
   {
     "datagolf_id": 15856,
     "season": 2022,
-    "cv_pred_mu": 0.0631101164167226
+    "cv_pred_mu": 0.039602890391576134
+  },
+  {
+    "datagolf_id": 5689,
+    "season": 2022,
+    "cv_pred_mu": -0.34384766592269117
+  },
+  {
+    "datagolf_id": 12422,
+    "season": 2022,
+    "cv_pred_mu": -0.6487449820674172
+  },
+  {
+    "datagolf_id": 7398,
+    "season": 2022,
+    "cv_pred_mu": -0.4869441073705296
+  },
+  {
+    "datagolf_id": 6986,
+    "season": 2022,
+    "cv_pred_mu": -0.6282148873024139
+  },
+  {
+    "datagolf_id": 18238,
+    "season": 2022,
+    "cv_pred_mu": -0.3270359042337163
+  },
+  {
+    "datagolf_id": 18079,
+    "season": 2022,
+    "cv_pred_mu": -0.08671348906917206
   },
   {
     "datagolf_id": 12920,
     "season": 2022,
-    "cv_pred_mu": -1.2513787917452097
-  },
-  {
-    "datagolf_id": 5513,
-    "season": 2022,
-    "cv_pred_mu": -1.4241924267247967
-  },
-  {
-    "datagolf_id": 29230,
-    "season": 2022,
-    "cv_pred_mu": -0.9663052019097946
-  },
-  {
-    "datagolf_id": 29327,
-    "season": 2022,
-    "cv_pred_mu": -0.9663052019097946
-  },
-  {
-    "datagolf_id": 29328,
-    "season": 2022,
-    "cv_pred_mu": -0.9667897897990527
-  },
-  {
-    "datagolf_id": 23113,
-    "season": 2022,
-    "cv_pred_mu": -0.9619439109064731
-  },
-  {
-    "datagolf_id": 28617,
-    "season": 2022,
-    "cv_pred_mu": -0.9667897897990527
-  },
-  {
-    "datagolf_id": 5321,
-    "season": 2022,
-    "cv_pred_mu": -0.15310283904506705
-  },
-  {
-    "datagolf_id": 139,
-    "season": 2022,
-    "cv_pred_mu": -2.6906159256946918
-  },
-  {
-    "datagolf_id": 294,
-    "season": 2022,
-    "cv_pred_mu": -2.2092075280634504
-  },
-  {
-    "datagolf_id": 653,
-    "season": 2022,
-    "cv_pred_mu": -1.8170481610867841
-  },
-  {
-    "datagolf_id": 290,
-    "season": 2022,
-    "cv_pred_mu": -1.901975583943714
-  },
-  {
-    "datagolf_id": 44,
-    "season": 2022,
-    "cv_pred_mu": -1.71326858274734
-  },
-  {
-    "datagolf_id": 3485,
-    "season": 2022,
-    "cv_pred_mu": -2.245858892376825
-  },
-  {
-    "datagolf_id": 21891,
-    "season": 2023,
-    "cv_pred_mu": -0.698762552071576
-  },
-  {
-    "datagolf_id": 13997,
-    "season": 2023,
-    "cv_pred_mu": -0.8728227366557477
-  },
-  {
-    "datagolf_id": 13872,
-    "season": 2023,
-    "cv_pred_mu": -0.6562081315192712
-  },
-  {
-    "datagolf_id": 24766,
-    "season": 2023,
-    "cv_pred_mu": -0.8885570502946464
-  },
-  {
-    "datagolf_id": 21554,
-    "season": 2023,
-    "cv_pred_mu": -0.8718037201967093
-  },
-  {
-    "datagolf_id": 12423,
-    "season": 2023,
-    "cv_pred_mu": -0.8696003513854138
-  },
-  {
-    "datagolf_id": 23014,
-    "season": 2023,
-    "cv_pred_mu": -0.7465436137320609
-  },
-  {
-    "datagolf_id": 10419,
-    "season": 2023,
-    "cv_pred_mu": -1.1316680212205323
-  },
-  {
-    "datagolf_id": 17365,
-    "season": 2023,
-    "cv_pred_mu": -0.5849510556404438
-  },
-  {
-    "datagolf_id": 27900,
-    "season": 2023,
-    "cv_pred_mu": -0.8499049033545873
-  },
-  {
-    "datagolf_id": 11889,
-    "season": 2023,
-    "cv_pred_mu": -0.890612669281623
-  },
-  {
-    "datagolf_id": 14196,
-    "season": 2023,
-    "cv_pred_mu": -0.9974695502388077
-  },
-  {
-    "datagolf_id": 19455,
-    "season": 2023,
-    "cv_pred_mu": -0.8408838588052672
-  },
-  {
-    "datagolf_id": 21944,
-    "season": 2023,
-    "cv_pred_mu": -0.8504384369297495
-  },
-  {
-    "datagolf_id": 30814,
-    "season": 2023,
-    "cv_pred_mu": -1.2177910648293564
-  },
-  {
-    "datagolf_id": 7655,
-    "season": 2023,
-    "cv_pred_mu": -0.7039223910651383
-  },
-  {
-    "datagolf_id": 16602,
-    "season": 2023,
-    "cv_pred_mu": -0.44257472588291247
+    "cv_pred_mu": -1.0406756933421397
   },
   {
     "datagolf_id": 23542,
-    "season": 2023,
-    "cv_pred_mu": -0.18533790877067752
+    "season": 2022,
+    "cv_pred_mu": -1.3385113594874192
   },
   {
-    "datagolf_id": 18238,
-    "season": 2023,
-    "cv_pred_mu": -0.758012143920621
+    "datagolf_id": 12577,
+    "season": 2022,
+    "cv_pred_mu": -0.6081890105823333
+  },
+  {
+    "datagolf_id": 15466,
+    "season": 2022,
+    "cv_pred_mu": 0.3674711393663004
+  },
+  {
+    "datagolf_id": 17488,
+    "season": 2022,
+    "cv_pred_mu": -0.15992934625235375
+  },
+  {
+    "datagolf_id": 17538,
+    "season": 2022,
+    "cv_pred_mu": -0.5115621044486185
+  },
+  {
+    "datagolf_id": 7334,
+    "season": 2022,
+    "cv_pred_mu": -0.830467938965268
+  },
+  {
+    "datagolf_id": 22085,
+    "season": 2022,
+    "cv_pred_mu": 0.5256511069052057
+  },
+  {
+    "datagolf_id": 18103,
+    "season": 2022,
+    "cv_pred_mu": -0.0027470696027684094
+  },
+  {
+    "datagolf_id": 19195,
+    "season": 2022,
+    "cv_pred_mu": 0.9419708827899056
+  },
+  {
+    "datagolf_id": 12294,
+    "season": 2022,
+    "cv_pred_mu": 0.7063668235562898
+  },
+  {
+    "datagolf_id": 17064,
+    "season": 2022,
+    "cv_pred_mu": -0.2990737210502487
+  },
+  {
+    "datagolf_id": 25919,
+    "season": 2022,
+    "cv_pred_mu": -1.1812159832295523
+  },
+  {
+    "datagolf_id": 17357,
+    "season": 2022,
+    "cv_pred_mu": -0.9453508379585573
+  },
+  {
+    "datagolf_id": 5716,
+    "season": 2022,
+    "cv_pred_mu": -1.0504232804168465
+  },
+  {
+    "datagolf_id": 17536,
+    "season": 2022,
+    "cv_pred_mu": 0.011332198445133418
+  },
+  {
+    "datagolf_id": 13944,
+    "season": 2022,
+    "cv_pred_mu": -0.2735968761589983
+  },
+  {
+    "datagolf_id": 10104,
+    "season": 2022,
+    "cv_pred_mu": -0.42225269725478365
   },
   {
     "datagolf_id": 18580,
-    "season": 2023,
-    "cv_pred_mu": -0.4063429742998266
+    "season": 2022,
+    "cv_pred_mu": -0.40829856040346246
   },
   {
-    "datagolf_id": 12337,
-    "season": 2023,
-    "cv_pred_mu": -0.44361587244530254
+    "datagolf_id": 16602,
+    "season": 2022,
+    "cv_pred_mu": -0.6793394189207366
   },
   {
-    "datagolf_id": 15556,
-    "season": 2023,
-    "cv_pred_mu": -0.9271398794447786
+    "datagolf_id": 17550,
+    "season": 2022,
+    "cv_pred_mu": -1.028829648303613
+  },
+  {
+    "datagolf_id": 7960,
+    "season": 2022,
+    "cv_pred_mu": -1.379061228658155
+  },
+  {
+    "datagolf_id": 13497,
+    "season": 2022,
+    "cv_pred_mu": -1.247872936397971
+  },
+  {
+    "datagolf_id": 7399,
+    "season": 2022,
+    "cv_pred_mu": -0.5688709965417421
+  },
+  {
+    "datagolf_id": 15575,
+    "season": 2022,
+    "cv_pred_mu": -0.8584388202193363
+  },
+  {
+    "datagolf_id": 17786,
+    "season": 2022,
+    "cv_pred_mu": -1.238987126289257
+  },
+  {
+    "datagolf_id": 26651,
+    "season": 2022,
+    "cv_pred_mu": 0.3279137770518058
+  },
+  {
+    "datagolf_id": 16841,
+    "season": 2022,
+    "cv_pred_mu": 0.3375016387633678
+  },
+  {
+    "datagolf_id": 14578,
+    "season": 2022,
+    "cv_pred_mu": 0.37855334345276126
+  },
+  {
+    "datagolf_id": 17511,
+    "season": 2022,
+    "cv_pred_mu": -0.009957551472375675
+  },
+  {
+    "datagolf_id": 19483,
+    "season": 2022,
+    "cv_pred_mu": -0.2929858565535447
+  },
+  {
+    "datagolf_id": 21074,
+    "season": 2022,
+    "cv_pred_mu": -0.9189749221917439
+  },
+  {
+    "datagolf_id": 14140,
+    "season": 2022,
+    "cv_pred_mu": -1.4567841376238422
+  },
+  {
+    "datagolf_id": 24342,
+    "season": 2022,
+    "cv_pred_mu": -0.8622350924799334
+  },
+  {
+    "datagolf_id": 19729,
+    "season": 2022,
+    "cv_pred_mu": -0.7025307364921793
   },
   {
     "datagolf_id": 13944,
     "season": 2023,
-    "cv_pred_mu": -1.607063651375705
+    "cv_pred_mu": -0.1529993513813263
+  },
+  {
+    "datagolf_id": 18238,
+    "season": 2023,
+    "cv_pred_mu": -0.2774464049043729
+  },
+  {
+    "datagolf_id": 15556,
+    "season": 2023,
+    "cv_pred_mu": -0.09235645121839084
   },
   {
     "datagolf_id": 10104,
     "season": 2023,
-    "cv_pred_mu": -0.4449101369199632
+    "cv_pred_mu": -0.15159771776180214
   },
   {
     "datagolf_id": 7672,
     "season": 2023,
-    "cv_pred_mu": -0.6333039749366718
+    "cv_pred_mu": -0.13388453404947293
+  },
+  {
+    "datagolf_id": 7655,
+    "season": 2023,
+    "cv_pred_mu": -0.1683433123170869
+  },
+  {
+    "datagolf_id": 12337,
+    "season": 2023,
+    "cv_pred_mu": -0.6278658753969809
+  },
+  {
+    "datagolf_id": 16602,
+    "season": 2023,
+    "cv_pred_mu": -0.3471963895870307
   },
   {
     "datagolf_id": 13497,
     "season": 2023,
-    "cv_pred_mu": -1.0999663011472434
+    "cv_pred_mu": -0.9014716570788587
   },
   {
     "datagolf_id": 11328,
     "season": 2023,
-    "cv_pred_mu": -0.8221115374353997
+    "cv_pred_mu": -0.738286870518829
   },
   {
     "datagolf_id": 14609,
     "season": 2023,
-    "cv_pred_mu": -0.07860106286629975
-  },
-  {
-    "datagolf_id": 12577,
-    "season": 2023,
-    "cv_pred_mu": -0.3112655612354415
+    "cv_pred_mu": 0.7789453219518191
   },
   {
     "datagolf_id": 11276,
     "season": 2023,
-    "cv_pred_mu": -0.6020352478955993
+    "cv_pred_mu": -0.1831728148519313
   },
   {
     "datagolf_id": 15575,
     "season": 2023,
-    "cv_pred_mu": -0.7072386899608318
+    "cv_pred_mu": -0.5780466296672019
   },
   {
     "datagolf_id": 18417,
     "season": 2023,
-    "cv_pred_mu": 3.304796207146844
-  },
-  {
-    "datagolf_id": 17576,
-    "season": 2023,
-    "cv_pred_mu": 0.055404198444430675
-  },
-  {
-    "datagolf_id": 17511,
-    "season": 2023,
-    "cv_pred_mu": -0.5522246282231452
-  },
-  {
-    "datagolf_id": 19895,
-    "season": 2023,
-    "cv_pred_mu": 0.8365639336231567
-  },
-  {
-    "datagolf_id": 13562,
-    "season": 2023,
-    "cv_pred_mu": 0.42705139041646933
-  },
-  {
-    "datagolf_id": 18841,
-    "season": 2023,
-    "cv_pred_mu": 0.2998274557086048
-  },
-  {
-    "datagolf_id": 14796,
-    "season": 2023,
-    "cv_pred_mu": -0.309220583291523
-  },
-  {
-    "datagolf_id": 22085,
-    "season": 2023,
-    "cv_pred_mu": 0.2911744181206217
-  },
-  {
-    "datagolf_id": 13900,
-    "season": 2023,
-    "cv_pred_mu": -0.08873494191160763
-  },
-  {
-    "datagolf_id": 18079,
-    "season": 2023,
-    "cv_pred_mu": -0.19337033042429652
-  },
-  {
-    "datagolf_id": 12294,
-    "season": 2023,
-    "cv_pred_mu": -0.18906980498154158
-  },
-  {
-    "datagolf_id": 11676,
-    "season": 2023,
-    "cv_pred_mu": 0.7884432209998788
-  },
-  {
-    "datagolf_id": 15466,
-    "season": 2023,
-    "cv_pred_mu": 0.9145084968351287
-  },
-  {
-    "datagolf_id": 14578,
-    "season": 2023,
-    "cv_pred_mu": -0.5215503426587835
-  },
-  {
-    "datagolf_id": 19195,
-    "season": 2023,
-    "cv_pred_mu": 1.7436468838025851
-  },
-  {
-    "datagolf_id": 14577,
-    "season": 2023,
-    "cv_pred_mu": -0.6094332842195898
-  },
-  {
-    "datagolf_id": 16243,
-    "season": 2023,
-    "cv_pred_mu": -0.2530365347004798
-  },
-  {
-    "datagolf_id": 6093,
-    "season": 2023,
-    "cv_pred_mu": -0.3523351403364854
-  },
-  {
-    "datagolf_id": 7398,
-    "season": 2023,
-    "cv_pred_mu": -0.4605198034836564
+    "cv_pred_mu": 0.9407070469087176
   },
   {
     "datagolf_id": 10091,
     "season": 2023,
-    "cv_pred_mu": 3.029744180192968
+    "cv_pred_mu": 0.6739952707322318
   },
   {
-    "datagolf_id": 6430,
+    "datagolf_id": 19895,
     "season": 2023,
-    "cv_pred_mu": -0.4390334227833653
-  },
-  {
-    "datagolf_id": 19483,
-    "season": 2023,
-    "cv_pred_mu": -0.620460945062737
-  },
-  {
-    "datagolf_id": 8825,
-    "season": 2023,
-    "cv_pred_mu": -0.6111346596472393
-  },
-  {
-    "datagolf_id": 14139,
-    "season": 2023,
-    "cv_pred_mu": 0.6155300157173669
+    "cv_pred_mu": 0.6379210074148755
   },
   {
     "datagolf_id": 17646,
     "season": 2023,
-    "cv_pred_mu": 0.412848186086192
+    "cv_pred_mu": 0.8070725336463708
   },
   {
     "datagolf_id": 26651,
     "season": 2023,
-    "cv_pred_mu": -0.6712355682329021
-  },
-  {
-    "datagolf_id": 17538,
-    "season": 2023,
-    "cv_pred_mu": -0.40347325452982197
-  },
-  {
-    "datagolf_id": 5689,
-    "season": 2023,
-    "cv_pred_mu": -0.4698492309376775
-  },
-  {
-    "datagolf_id": 16841,
-    "season": 2023,
-    "cv_pred_mu": -0.2352572251438168
+    "cv_pred_mu": 0.17876874049457545
   },
   {
     "datagolf_id": 19841,
     "season": 2023,
-    "cv_pred_mu": -0.34069438187605616
+    "cv_pred_mu": 0.34059725836827526
   },
   {
-    "datagolf_id": 6986,
+    "datagolf_id": 16841,
     "season": 2023,
-    "cv_pred_mu": -0.932178181918921
+    "cv_pred_mu": 0.4040443428849655
   },
   {
-    "datagolf_id": 12422,
+    "datagolf_id": 14578,
     "season": 2023,
-    "cv_pred_mu": 0.3121735001062981
+    "cv_pred_mu": 0.412432213974402
   },
   {
-    "datagolf_id": 14838,
+    "datagolf_id": 13562,
     "season": 2023,
-    "cv_pred_mu": -0.2344718653795592
+    "cv_pred_mu": 0.807197874071124
   },
   {
-    "datagolf_id": 1547,
+    "datagolf_id": 18841,
     "season": 2023,
-    "cv_pred_mu": -0.34007054694237054
+    "cv_pred_mu": 0.3940166283126697
+  },
+  {
+    "datagolf_id": 17511,
+    "season": 2023,
+    "cv_pred_mu": 0.09678857507867761
+  },
+  {
+    "datagolf_id": 14577,
+    "season": 2023,
+    "cv_pred_mu": -0.10047487452076898
+  },
+  {
+    "datagolf_id": 19483,
+    "season": 2023,
+    "cv_pred_mu": -0.30421074790094016
   },
   {
     "datagolf_id": 14636,
     "season": 2023,
-    "cv_pred_mu": 0.6151539916226183
+    "cv_pred_mu": 0.31404944798526413
   },
   {
-    "datagolf_id": 7334,
+    "datagolf_id": 14139,
     "season": 2023,
-    "cv_pred_mu": -0.42099361235911187
+    "cv_pred_mu": 0.5649104530783633
+  },
+  {
+    "datagolf_id": 6430,
+    "season": 2023,
+    "cv_pred_mu": 0.25922389404934554
+  },
+  {
+    "datagolf_id": 6093,
+    "season": 2023,
+    "cv_pred_mu": 0.16965625427457906
   },
   {
     "datagolf_id": 9771,
     "season": 2023,
-    "cv_pred_mu": 0.09368694685513468
+    "cv_pred_mu": 0.20363428381902557
   },
   {
-    "datagolf_id": 17488,
+    "datagolf_id": 17576,
     "season": 2023,
-    "cv_pred_mu": -0.4501412958880139
+    "cv_pred_mu": 0.1654850318148334
+  },
+  {
+    "datagolf_id": 14838,
+    "season": 2023,
+    "cv_pred_mu": 0.2723222626834093
+  },
+  {
+    "datagolf_id": 14796,
+    "season": 2023,
+    "cv_pred_mu": 0.05968831150691939
+  },
+  {
+    "datagolf_id": 16243,
+    "season": 2023,
+    "cv_pred_mu": 0.03834570725800154
+  },
+  {
+    "datagolf_id": 8825,
+    "season": 2023,
+    "cv_pred_mu": 0.0009457132050675887
+  },
+  {
+    "datagolf_id": 11676,
+    "season": 2023,
+    "cv_pred_mu": 0.23811017604959436
   },
   {
     "datagolf_id": 15856,
     "season": 2023,
-    "cv_pred_mu": -0.09442999032107052
+    "cv_pred_mu": 0.2254509071512272
+  },
+  {
+    "datagolf_id": 7398,
+    "season": 2023,
+    "cv_pred_mu": -0.22854046504841583
+  },
+  {
+    "datagolf_id": 6986,
+    "season": 2023,
+    "cv_pred_mu": -0.33847128198553356
   },
   {
     "datagolf_id": 12920,
     "season": 2023,
-    "cv_pred_mu": -0.7330157615978621
+    "cv_pred_mu": -0.6529560775400911
   },
   {
-    "datagolf_id": 5513,
+    "datagolf_id": 18580,
     "season": 2023,
-    "cv_pred_mu": -0.9623080968742186
+    "cv_pred_mu": -0.14423619523273462
   },
   {
-    "datagolf_id": 26990,
+    "datagolf_id": 5689,
     "season": 2023,
-    "cv_pred_mu": -0.9867704994152813
+    "cv_pred_mu": -0.08087158217955942
   },
   {
-    "datagolf_id": 12359,
+    "datagolf_id": 12422,
     "season": 2023,
-    "cv_pred_mu": -0.9415610042480356
+    "cv_pred_mu": -0.39368386606499917
   },
   {
-    "datagolf_id": 28158,
+    "datagolf_id": 13900,
     "season": 2023,
-    "cv_pred_mu": -0.9861595602913996
+    "cv_pred_mu": 0.10573674285011245
   },
   {
-    "datagolf_id": 24294,
+    "datagolf_id": 18079,
     "season": 2023,
-    "cv_pred_mu": -0.9867704994152813
+    "cv_pred_mu": 0.15901829384124208
   },
   {
-    "datagolf_id": 15756,
+    "datagolf_id": 23542,
     "season": 2023,
-    "cv_pred_mu": -0.9794392299287009
+    "cv_pred_mu": -0.9262131807079214
   },
   {
-    "datagolf_id": 30732,
+    "datagolf_id": 12577,
     "season": 2023,
-    "cv_pred_mu": -0.987381438539163
+    "cv_pred_mu": -0.40772162468429796
   },
   {
-    "datagolf_id": 24280,
+    "datagolf_id": 15466,
     "season": 2023,
-    "cv_pred_mu": -0.987381438539163
+    "cv_pred_mu": 0.41013012309269525
   },
   {
-    "datagolf_id": 139,
+    "datagolf_id": 17488,
     "season": 2023,
-    "cv_pred_mu": -1.9010730628853538
+    "cv_pred_mu": 0.26455239076360315
   },
   {
-    "datagolf_id": 294,
+    "datagolf_id": 17538,
     "season": 2023,
-    "cv_pred_mu": -1.6018906197945295
+    "cv_pred_mu": -0.30599898262490144
   },
   {
-    "datagolf_id": 653,
+    "datagolf_id": 7334,
     "season": 2023,
-    "cv_pred_mu": -1.5759183382116915
+    "cv_pred_mu": -0.5813958159381939
   },
   {
-    "datagolf_id": 5321,
+    "datagolf_id": 22085,
     "season": 2023,
-    "cv_pred_mu": -0.5114261435462086
+    "cv_pred_mu": 0.45796281527679283
   },
   {
-    "datagolf_id": 290,
+    "datagolf_id": 1547,
     "season": 2023,
-    "cv_pred_mu": -1.2552296134521832
+    "cv_pred_mu": -0.5956527484038121
   },
   {
-    "datagolf_id": 44,
+    "datagolf_id": 19195,
     "season": 2023,
-    "cv_pred_mu": -1.314167998914685
+    "cv_pred_mu": 0.8673253758861714
   },
   {
-    "datagolf_id": 3485,
+    "datagolf_id": 12294,
     "season": 2023,
-    "cv_pred_mu": -1.7776848750245502
+    "cv_pred_mu": 0.7343976705204347
   },
   {
-    "datagolf_id": 23602,
-    "season": 2024,
-    "cv_pred_mu": -0.6352364938414159
+    "datagolf_id": 10419,
+    "season": 2023,
+    "cv_pred_mu": 0.13747236530546775
   },
   {
-    "datagolf_id": 26096,
-    "season": 2024,
-    "cv_pred_mu": -0.6697572805818233
+    "datagolf_id": 17365,
+    "season": 2023,
+    "cv_pred_mu": -0.081153848390249
   },
   {
-    "datagolf_id": 23950,
-    "season": 2024,
-    "cv_pred_mu": -0.33419227680110813
+    "datagolf_id": 13997,
+    "season": 2023,
+    "cv_pred_mu": -0.1676621531666727
   },
   {
-    "datagolf_id": 26653,
-    "season": 2024,
-    "cv_pred_mu": -0.8428558823879826
+    "datagolf_id": 30814,
+    "season": 2023,
+    "cv_pred_mu": -1.120487357463456
   },
   {
-    "datagolf_id": 12808,
-    "season": 2024,
-    "cv_pred_mu": -1.0377711879722649
+    "datagolf_id": 19455,
+    "season": 2023,
+    "cv_pred_mu": -1.278806965626085
   },
   {
-    "datagolf_id": 25157,
-    "season": 2024,
-    "cv_pred_mu": -0.7745266312635859
+    "datagolf_id": 21891,
+    "season": 2023,
+    "cv_pred_mu": 0.03066157618716578
   },
   {
-    "datagolf_id": 22760,
-    "season": 2024,
-    "cv_pred_mu": -0.9056479613461589
+    "datagolf_id": 21944,
+    "season": 2023,
+    "cv_pred_mu": -0.3511466464052282
   },
   {
-    "datagolf_id": 19870,
-    "season": 2024,
-    "cv_pred_mu": -0.7305143276449577
+    "datagolf_id": 14196,
+    "season": 2023,
+    "cv_pred_mu": -0.8384991204640989
   },
   {
-    "datagolf_id": 16394,
-    "season": 2024,
-    "cv_pred_mu": -0.9811497356942873
+    "datagolf_id": 13872,
+    "season": 2023,
+    "cv_pred_mu": 0.1534874214398548
   },
   {
-    "datagolf_id": 28270,
-    "season": 2024,
-    "cv_pred_mu": -0.8344110612368851
+    "datagolf_id": 21554,
+    "season": 2023,
+    "cv_pred_mu": -0.32180090095637737
   },
   {
-    "datagolf_id": 21756,
-    "season": 2024,
-    "cv_pred_mu": -0.9825610965234158
+    "datagolf_id": 24766,
+    "season": 2023,
+    "cv_pred_mu": -0.10004260126568096
   },
   {
-    "datagolf_id": 13126,
-    "season": 2024,
-    "cv_pred_mu": -0.8303585053145675
+    "datagolf_id": 27900,
+    "season": 2023,
+    "cv_pred_mu": -0.8127646204692379
   },
   {
-    "datagolf_id": 12965,
-    "season": 2024,
-    "cv_pred_mu": -0.26827688892439694
+    "datagolf_id": 11889,
+    "season": 2023,
+    "cv_pred_mu": -0.30132423726120683
   },
   {
-    "datagolf_id": 13965,
-    "season": 2024,
-    "cv_pred_mu": -0.9442000721772295
+    "datagolf_id": 23014,
+    "season": 2023,
+    "cv_pred_mu": 0.03844482246713585
   },
   {
-    "datagolf_id": 23604,
-    "season": 2024,
-    "cv_pred_mu": -0.6448511777254996
-  },
-  {
-    "datagolf_id": 14655,
-    "season": 2024,
-    "cv_pred_mu": -1.0933097638722384
-  },
-  {
-    "datagolf_id": 19477,
-    "season": 2024,
-    "cv_pred_mu": -0.983727235292513
-  },
-  {
-    "datagolf_id": 14459,
-    "season": 2024,
-    "cv_pred_mu": -0.8303468334027275
-  },
-  {
-    "datagolf_id": 32055,
-    "season": 2024,
-    "cv_pred_mu": -0.5587442713333407
-  },
-  {
-    "datagolf_id": 13412,
-    "season": 2024,
-    "cv_pred_mu": -0.5148666778089059
-  },
-  {
-    "datagolf_id": 9171,
-    "season": 2024,
-    "cv_pred_mu": -1.2783303713051315
-  },
-  {
-    "datagolf_id": 14926,
-    "season": 2024,
-    "cv_pred_mu": -1.3391357179874959
-  },
-  {
-    "datagolf_id": 19960,
-    "season": 2024,
-    "cv_pred_mu": -0.8697736733156627
-  },
-  {
-    "datagolf_id": 19396,
-    "season": 2024,
-    "cv_pred_mu": -0.8372704106025333
-  },
-  {
-    "datagolf_id": 24343,
-    "season": 2024,
-    "cv_pred_mu": -0.9898089871539507
+    "datagolf_id": 12423,
+    "season": 2023,
+    "cv_pred_mu": -0.29831867668332923
   },
   {
     "datagolf_id": 14609,
     "season": 2024,
-    "cv_pred_mu": 0.1411704973571366
+    "cv_pred_mu": 0.7962954136233892
   },
   {
     "datagolf_id": 21891,
     "season": 2024,
-    "cv_pred_mu": -1.2278642435256226
-  },
-  {
-    "datagolf_id": 12577,
-    "season": 2024,
-    "cv_pred_mu": 0.11586404833163488
-  },
-  {
-    "datagolf_id": 17550,
-    "season": 2024,
-    "cv_pred_mu": -1.2956632503597647
-  },
-  {
-    "datagolf_id": 11889,
-    "season": 2024,
-    "cv_pred_mu": -0.4691729212212229
-  },
-  {
-    "datagolf_id": 14196,
-    "season": 2024,
-    "cv_pred_mu": -1.0977662932269467
-  },
-  {
-    "datagolf_id": 7960,
-    "season": 2024,
-    "cv_pred_mu": -0.8480566470625267
+    "cv_pred_mu": 0.08557716237410565
   },
   {
     "datagolf_id": 21944,
     "season": 2024,
-    "cv_pred_mu": -0.5906392151994335
+    "cv_pred_mu": -0.2823155248933699
   },
   {
-    "datagolf_id": 18417,
+    "datagolf_id": 14196,
     "season": 2024,
-    "cv_pred_mu": 3.4084903810147535
+    "cv_pred_mu": -0.7267728216954948
   },
   {
-    "datagolf_id": 17576,
+    "datagolf_id": 17550,
     "season": 2024,
-    "cv_pred_mu": 0.09792028695182542
+    "cv_pred_mu": -0.784614826120706
   },
   {
-    "datagolf_id": 17511,
+    "datagolf_id": 7960,
     "season": 2024,
-    "cv_pred_mu": -0.4179279701883773
-  },
-  {
-    "datagolf_id": 19895,
-    "season": 2024,
-    "cv_pred_mu": 1.827517543136812
-  },
-  {
-    "datagolf_id": 13562,
-    "season": 2024,
-    "cv_pred_mu": 0.8831276531068348
-  },
-  {
-    "datagolf_id": 18841,
-    "season": 2024,
-    "cv_pred_mu": 0.6233814751498861
-  },
-  {
-    "datagolf_id": 14796,
-    "season": 2024,
-    "cv_pred_mu": -0.13600080643022755
-  },
-  {
-    "datagolf_id": 22085,
-    "season": 2024,
-    "cv_pred_mu": 0.3747894944637895
-  },
-  {
-    "datagolf_id": 13900,
-    "season": 2024,
-    "cv_pred_mu": 0.3188947290187244
-  },
-  {
-    "datagolf_id": 18079,
-    "season": 2024,
-    "cv_pred_mu": 0.7659254790713559
-  },
-  {
-    "datagolf_id": 12294,
-    "season": 2024,
-    "cv_pred_mu": 0.3520021654394383
-  },
-  {
-    "datagolf_id": 11676,
-    "season": 2024,
-    "cv_pred_mu": 0.4268569725620508
-  },
-  {
-    "datagolf_id": 15466,
-    "season": 2024,
-    "cv_pred_mu": 0.190935746450281
-  },
-  {
-    "datagolf_id": 7399,
-    "season": 2024,
-    "cv_pred_mu": -0.9666136049816019
-  },
-  {
-    "datagolf_id": 19428,
-    "season": 2024,
-    "cv_pred_mu": 0.39777556878787823
-  },
-  {
-    "datagolf_id": 14578,
-    "season": 2024,
-    "cv_pred_mu": -0.1583555155153316
-  },
-  {
-    "datagolf_id": 19195,
-    "season": 2024,
-    "cv_pred_mu": 1.740135626162785
-  },
-  {
-    "datagolf_id": 14577,
-    "season": 2024,
-    "cv_pred_mu": -0.6015595557140684
-  },
-  {
-    "datagolf_id": 16243,
-    "season": 2024,
-    "cv_pred_mu": 0.45247010727296244
-  },
-  {
-    "datagolf_id": 6093,
-    "season": 2024,
-    "cv_pred_mu": -0.3434533650593236
-  },
-  {
-    "datagolf_id": 13872,
-    "season": 2024,
-    "cv_pred_mu": -0.6463164091333677
-  },
-  {
-    "datagolf_id": 24766,
-    "season": 2024,
-    "cv_pred_mu": -0.644854095761862
-  },
-  {
-    "datagolf_id": 7398,
-    "season": 2024,
-    "cv_pred_mu": -0.3837554906373888
-  },
-  {
-    "datagolf_id": 21554,
-    "season": 2024,
-    "cv_pred_mu": -0.9660895211328977
+    "cv_pred_mu": -1.0340773623445794
   },
   {
     "datagolf_id": 10091,
     "season": 2024,
-    "cv_pred_mu": 1.8960726029525181
+    "cv_pred_mu": 0.8394778630144702
   },
   {
-    "datagolf_id": 6430,
+    "datagolf_id": 19895,
     "season": 2024,
-    "cv_pred_mu": 0.13236945232093467
-  },
-  {
-    "datagolf_id": 19483,
-    "season": 2024,
-    "cv_pred_mu": -0.30611529448724084
-  },
-  {
-    "datagolf_id": 12423,
-    "season": 2024,
-    "cv_pred_mu": -0.7934821101214811
-  },
-  {
-    "datagolf_id": 23014,
-    "season": 2024,
-    "cv_pred_mu": 0.18286698221343023
-  },
-  {
-    "datagolf_id": 8825,
-    "season": 2024,
-    "cv_pred_mu": -0.5959679014692965
-  },
-  {
-    "datagolf_id": 14139,
-    "season": 2024,
-    "cv_pred_mu": 0.4488662273892322
+    "cv_pred_mu": 0.867670724939287
   },
   {
     "datagolf_id": 17646,
     "season": 2024,
-    "cv_pred_mu": 0.9476100139150723
+    "cv_pred_mu": 1.053976824804544
   },
   {
     "datagolf_id": 26651,
     "season": 2024,
-    "cv_pred_mu": -0.2828072346754892
-  },
-  {
-    "datagolf_id": 17538,
-    "season": 2024,
-    "cv_pred_mu": -0.4735311509103943
-  },
-  {
-    "datagolf_id": 17786,
-    "season": 2024,
-    "cv_pred_mu": -1.2394077092851439
-  },
-  {
-    "datagolf_id": 5689,
-    "season": 2024,
-    "cv_pred_mu": -0.19561220089214743
-  },
-  {
-    "datagolf_id": 16841,
-    "season": 2024,
-    "cv_pred_mu": -0.1144150968958551
+    "cv_pred_mu": 0.33140433360314997
   },
   {
     "datagolf_id": 19841,
     "season": 2024,
-    "cv_pred_mu": 0.7958578043223432
+    "cv_pred_mu": 0.4166612412978768
   },
   {
-    "datagolf_id": 6986,
+    "datagolf_id": 16841,
     "season": 2024,
-    "cv_pred_mu": -0.8231047880466853
+    "cv_pred_mu": 0.5431022665803785
   },
   {
-    "datagolf_id": 12422,
+    "datagolf_id": 14578,
     "season": 2024,
-    "cv_pred_mu": 0.15550112126836957
+    "cv_pred_mu": 0.586958756333784
   },
   {
-    "datagolf_id": 14838,
+    "datagolf_id": 13562,
     "season": 2024,
-    "cv_pred_mu": 0.03337245926033883
+    "cv_pred_mu": 1.1262174497717625
   },
   {
-    "datagolf_id": 1547,
+    "datagolf_id": 18841,
     "season": 2024,
-    "cv_pred_mu": 0.011383078607476282
+    "cv_pred_mu": 0.6757688305285297
+  },
+  {
+    "datagolf_id": 17511,
+    "season": 2024,
+    "cv_pred_mu": 0.24327622824381756
+  },
+  {
+    "datagolf_id": 14577,
+    "season": 2024,
+    "cv_pred_mu": 0.017336225378864874
+  },
+  {
+    "datagolf_id": 19483,
+    "season": 2024,
+    "cv_pred_mu": -0.09782973778329496
   },
   {
     "datagolf_id": 14636,
     "season": 2024,
-    "cv_pred_mu": 0.742951331314124
+    "cv_pred_mu": 0.5682526127979806
   },
   {
-    "datagolf_id": 7334,
+    "datagolf_id": 14139,
     "season": 2024,
-    "cv_pred_mu": -0.41801600540094563
+    "cv_pred_mu": 0.8942656117816566
+  },
+  {
+    "datagolf_id": 6430,
+    "season": 2024,
+    "cv_pred_mu": 0.43955733597625063
+  },
+  {
+    "datagolf_id": 13900,
+    "season": 2024,
+    "cv_pred_mu": 0.36520725227398093
+  },
+  {
+    "datagolf_id": 6093,
+    "season": 2024,
+    "cv_pred_mu": 0.3744347136940937
+  },
+  {
+    "datagolf_id": 18079,
+    "season": 2024,
+    "cv_pred_mu": 0.22889285576528268
   },
   {
     "datagolf_id": 9771,
     "season": 2024,
-    "cv_pred_mu": -0.40550166556590356
+    "cv_pred_mu": 0.3859566745784733
   },
   {
-    "datagolf_id": 17488,
+    "datagolf_id": 17576,
     "season": 2024,
-    "cv_pred_mu": -0.498946203141968
+    "cv_pred_mu": 0.2500235787652741
+  },
+  {
+    "datagolf_id": 14838,
+    "season": 2024,
+    "cv_pred_mu": 0.5229272571938319
+  },
+  {
+    "datagolf_id": 13872,
+    "season": 2024,
+    "cv_pred_mu": 0.20257710323547956
+  },
+  {
+    "datagolf_id": 14796,
+    "season": 2024,
+    "cv_pred_mu": 0.21460799336822328
+  },
+  {
+    "datagolf_id": 19428,
+    "season": 2024,
+    "cv_pred_mu": 0.07495413084783403
+  },
+  {
+    "datagolf_id": 21554,
+    "season": 2024,
+    "cv_pred_mu": -0.2753470966740249
+  },
+  {
+    "datagolf_id": 16243,
+    "season": 2024,
+    "cv_pred_mu": 0.16615814840170193
+  },
+  {
+    "datagolf_id": 24766,
+    "season": 2024,
+    "cv_pred_mu": 0.055398398681354176
+  },
+  {
+    "datagolf_id": 8825,
+    "season": 2024,
+    "cv_pred_mu": 0.11945503811095415
+  },
+  {
+    "datagolf_id": 11676,
+    "season": 2024,
+    "cv_pred_mu": 0.5237448549384649
   },
   {
     "datagolf_id": 15856,
     "season": 2024,
-    "cv_pred_mu": -0.2357889411099347
+    "cv_pred_mu": 0.5566665671240544
+  },
+  {
+    "datagolf_id": 5689,
+    "season": 2024,
+    "cv_pred_mu": 0.007795370954432702
+  },
+  {
+    "datagolf_id": 7398,
+    "season": 2024,
+    "cv_pred_mu": 0.08268496796838082
+  },
+  {
+    "datagolf_id": 6986,
+    "season": 2024,
+    "cv_pred_mu": -0.0844150052592132
+  },
+  {
+    "datagolf_id": 7399,
+    "season": 2024,
+    "cv_pred_mu": -0.4412008207975526
+  },
+  {
+    "datagolf_id": 17786,
+    "season": 2024,
+    "cv_pred_mu": -0.8715059813613725
+  },
+  {
+    "datagolf_id": 18417,
+    "season": 2024,
+    "cv_pred_mu": 1.185631968016191
+  },
+  {
+    "datagolf_id": 12422,
+    "season": 2024,
+    "cv_pred_mu": -0.20235261356014542
   },
   {
     "datagolf_id": 12920,
     "season": 2024,
-    "cv_pred_mu": -0.7998782468714667
+    "cv_pred_mu": -0.48884565166645844
   },
   {
-    "datagolf_id": 5513,
+    "datagolf_id": 12577,
     "season": 2024,
-    "cv_pred_mu": -1.1665169141487821
+    "cv_pred_mu": -0.27917881613200324
   },
   {
-    "datagolf_id": 29195,
+    "datagolf_id": 15466,
     "season": 2024,
-    "cv_pred_mu": -0.9914597340871919
+    "cv_pred_mu": 0.5787269651688863
   },
   {
-    "datagolf_id": 25964,
+    "datagolf_id": 23014,
     "season": 2024,
-    "cv_pred_mu": -0.9931104810204343
+    "cv_pred_mu": 0.2343342364727124
   },
   {
-    "datagolf_id": 23113,
+    "datagolf_id": 17488,
     "season": 2024,
-    "cv_pred_mu": -1.8819525029971396
+    "cv_pred_mu": 0.39893703018401605
   },
   {
-    "datagolf_id": 653,
+    "datagolf_id": 17538,
     "season": 2024,
-    "cv_pred_mu": -1.4471902152310554
+    "cv_pred_mu": -0.1309893380005926
   },
   {
-    "datagolf_id": 5321,
+    "datagolf_id": 12423,
     "season": 2024,
-    "cv_pred_mu": -0.5422743317415955
+    "cv_pred_mu": -0.2960890386088509
   },
   {
-    "datagolf_id": 44,
+    "datagolf_id": 7334,
     "season": 2024,
-    "cv_pred_mu": -1.4396477258015146
+    "cv_pred_mu": -0.5499900524740176
   },
   {
-    "datagolf_id": 3485,
+    "datagolf_id": 22085,
     "season": 2024,
-    "cv_pred_mu": -2.3490481061759914
+    "cv_pred_mu": 0.4791584976124889
   },
   {
-    "datagolf_id": 18554,
-    "season": 2025,
-    "cv_pred_mu": -0.5554344092153767
+    "datagolf_id": 1547,
+    "season": 2024,
+    "cv_pred_mu": -0.39629750034478645
   },
   {
-    "datagolf_id": 22833,
-    "season": 2025,
-    "cv_pred_mu": -0.7454587583753041
+    "datagolf_id": 11889,
+    "season": 2024,
+    "cv_pred_mu": -0.20354061356165865
   },
   {
-    "datagolf_id": 17881,
-    "season": 2025,
-    "cv_pred_mu": -0.5495944676491975
+    "datagolf_id": 19195,
+    "season": 2024,
+    "cv_pred_mu": 1.0266885491969877
   },
   {
-    "datagolf_id": 27364,
-    "season": 2025,
-    "cv_pred_mu": -0.7228201439382174
+    "datagolf_id": 12294,
+    "season": 2024,
+    "cv_pred_mu": 0.9267100794009647
   },
   {
-    "datagolf_id": 18628,
-    "season": 2025,
-    "cv_pred_mu": -0.7323296698631339
+    "datagolf_id": 13412,
+    "season": 2024,
+    "cv_pred_mu": -0.11901514741312363
   },
   {
-    "datagolf_id": 17780,
-    "season": 2025,
-    "cv_pred_mu": -0.6633703734648597
+    "datagolf_id": 25157,
+    "season": 2024,
+    "cv_pred_mu": -0.47423722600846224
   },
   {
-    "datagolf_id": 28635,
-    "season": 2025,
-    "cv_pred_mu": -0.9277642255767268
+    "datagolf_id": 21756,
+    "season": 2024,
+    "cv_pred_mu": 0.04183695672881805
   },
   {
-    "datagolf_id": 18634,
-    "season": 2025,
-    "cv_pred_mu": -0.5488495773446521
+    "datagolf_id": 12808,
+    "season": 2024,
+    "cv_pred_mu": -0.5642363571376924
   },
   {
-    "datagolf_id": 13508,
-    "season": 2025,
-    "cv_pred_mu": -0.6152136269154743
+    "datagolf_id": 13965,
+    "season": 2024,
+    "cv_pred_mu": -0.820754123743438
   },
   {
-    "datagolf_id": 14181,
-    "season": 2025,
-    "cv_pred_mu": -0.7790252196728478
+    "datagolf_id": 14926,
+    "season": 2024,
+    "cv_pred_mu": -0.6704245251904586
   },
   {
-    "datagolf_id": 23838,
-    "season": 2025,
-    "cv_pred_mu": -0.6096076901827672
+    "datagolf_id": 9171,
+    "season": 2024,
+    "cv_pred_mu": -0.7183075037198754
   },
   {
-    "datagolf_id": 23465,
-    "season": 2025,
-    "cv_pred_mu": -0.6778818088329908
+    "datagolf_id": 23950,
+    "season": 2024,
+    "cv_pred_mu": 0.10314223192516794
   },
   {
-    "datagolf_id": 17543,
-    "season": 2025,
-    "cv_pred_mu": -1.628840849713985
+    "datagolf_id": 26096,
+    "season": 2024,
+    "cv_pred_mu": 0.08891513170336007
   },
   {
-    "datagolf_id": 28469,
-    "season": 2025,
-    "cv_pred_mu": -0.6011319265598571
+    "datagolf_id": 23602,
+    "season": 2024,
+    "cv_pred_mu": -0.01647195085642985
   },
   {
-    "datagolf_id": 31960,
-    "season": 2025,
-    "cv_pred_mu": -0.7882458736003031
+    "datagolf_id": 13126,
+    "season": 2024,
+    "cv_pred_mu": 0.2280918208892702
   },
   {
-    "datagolf_id": 14795,
-    "season": 2025,
-    "cv_pred_mu": -0.5119572708498198
+    "datagolf_id": 23604,
+    "season": 2024,
+    "cv_pred_mu": -0.005171476420404643
   },
   {
-    "datagolf_id": 13470,
-    "season": 2025,
-    "cv_pred_mu": -0.5989259093658332
+    "datagolf_id": 26653,
+    "season": 2024,
+    "cv_pred_mu": -0.7210927021155115
   },
   {
-    "datagolf_id": 12909,
-    "season": 2025,
-    "cv_pred_mu": -1.072962518777063
+    "datagolf_id": 14459,
+    "season": 2024,
+    "cv_pred_mu": -0.3461495976978971
   },
   {
-    "datagolf_id": 18105,
-    "season": 2025,
-    "cv_pred_mu": -0.5385043198716215
+    "datagolf_id": 28270,
+    "season": 2024,
+    "cv_pred_mu": -0.4202364230371942
   },
   {
-    "datagolf_id": 19872,
-    "season": 2025,
-    "cv_pred_mu": -1.2696576956587782
+    "datagolf_id": 19477,
+    "season": 2024,
+    "cv_pred_mu": -0.9110357730102374
   },
   {
-    "datagolf_id": 28473,
-    "season": 2025,
-    "cv_pred_mu": -0.45122059591376956
+    "datagolf_id": 19396,
+    "season": 2024,
+    "cv_pred_mu": -0.1435722022254756
+  },
+  {
+    "datagolf_id": 22760,
+    "season": 2024,
+    "cv_pred_mu": -0.08674349512307089
+  },
+  {
+    "datagolf_id": 32055,
+    "season": 2024,
+    "cv_pred_mu": -0.9146006982252713
+  },
+  {
+    "datagolf_id": 19870,
+    "season": 2024,
+    "cv_pred_mu": -0.1450055240193106
+  },
+  {
+    "datagolf_id": 16394,
+    "season": 2024,
+    "cv_pred_mu": -0.07111232525647701
+  },
+  {
+    "datagolf_id": 19960,
+    "season": 2024,
+    "cv_pred_mu": -0.8724850901931531
+  },
+  {
+    "datagolf_id": 12965,
+    "season": 2024,
+    "cv_pred_mu": -0.16175653611480847
   },
   {
     "datagolf_id": 18417,
     "season": 2025,
-    "cv_pred_mu": 2.835484580412933
+    "cv_pred_mu": 1.2191896713046524
   },
   {
-    "datagolf_id": 17576,
+    "datagolf_id": 10091,
     "season": 2025,
-    "cv_pred_mu": 0.0983651163594016
-  },
-  {
-    "datagolf_id": 17511,
-    "season": 2025,
-    "cv_pred_mu": -0.08205696057633349
+    "cv_pred_mu": 0.7297988553694588
   },
   {
     "datagolf_id": 19895,
     "season": 2025,
-    "cv_pred_mu": 0.8180932403353589
+    "cv_pred_mu": 0.7805936367945681
   },
   {
-    "datagolf_id": 13562,
+    "datagolf_id": 17646,
     "season": 2025,
-    "cv_pred_mu": 0.6245193661988739
+    "cv_pred_mu": 0.9252887935050258
   },
   {
-    "datagolf_id": 18841,
+    "datagolf_id": 19841,
     "season": 2025,
-    "cv_pred_mu": 0.12559007728364735
+    "cv_pred_mu": 0.24685776609946386
   },
   {
-    "datagolf_id": 14796,
+    "datagolf_id": 16841,
     "season": 2025,
-    "cv_pred_mu": -0.29410775806434697
-  },
-  {
-    "datagolf_id": 22085,
-    "season": 2025,
-    "cv_pred_mu": 0.9170723436189001
-  },
-  {
-    "datagolf_id": 13900,
-    "season": 2025,
-    "cv_pred_mu": 0.2907139940559469
-  },
-  {
-    "datagolf_id": 18079,
-    "season": 2025,
-    "cv_pred_mu": 0.683754183884008
-  },
-  {
-    "datagolf_id": 12294,
-    "season": 2025,
-    "cv_pred_mu": 0.2221124445345013
-  },
-  {
-    "datagolf_id": 11676,
-    "season": 2025,
-    "cv_pred_mu": 0.0463527709733369
-  },
-  {
-    "datagolf_id": 15466,
-    "season": 2025,
-    "cv_pred_mu": 0.3472965812563289
-  },
-  {
-    "datagolf_id": 23602,
-    "season": 2025,
-    "cv_pred_mu": 0.5459116484694164
-  },
-  {
-    "datagolf_id": 26096,
-    "season": 2025,
-    "cv_pred_mu": -0.1623190139637833
-  },
-  {
-    "datagolf_id": 7399,
-    "season": 2025,
-    "cv_pred_mu": -0.7043856475970613
-  },
-  {
-    "datagolf_id": 17606,
-    "season": 2025,
-    "cv_pred_mu": -0.9686324562595942
-  },
-  {
-    "datagolf_id": 19428,
-    "season": 2025,
-    "cv_pred_mu": 0.43912957379716955
-  },
-  {
-    "datagolf_id": 14578,
-    "season": 2025,
-    "cv_pred_mu": -0.03633035551845465
-  },
-  {
-    "datagolf_id": 19195,
-    "season": 2025,
-    "cv_pred_mu": 1.5585081816784665
+    "cv_pred_mu": 0.5420582590514806
   },
   {
     "datagolf_id": 23950,
     "season": 2025,
-    "cv_pred_mu": 1.2925699522000191
-  },
-  {
-    "datagolf_id": 26653,
-    "season": 2025,
-    "cv_pred_mu": -0.7902157577067934
-  },
-  {
-    "datagolf_id": 17536,
-    "season": 2025,
-    "cv_pred_mu": -0.250141597545545
-  },
-  {
-    "datagolf_id": 14577,
-    "season": 2025,
-    "cv_pred_mu": -0.6091416314806273
-  },
-  {
-    "datagolf_id": 16243,
-    "season": 2025,
-    "cv_pred_mu": 0.2452045674107589
-  },
-  {
-    "datagolf_id": 6093,
-    "season": 2025,
-    "cv_pred_mu": -0.5462718556622588
-  },
-  {
-    "datagolf_id": 13872,
-    "season": 2025,
-    "cv_pred_mu": -0.2437030165172038
-  },
-  {
-    "datagolf_id": 24766,
-    "season": 2025,
-    "cv_pred_mu": -0.532185283293069
-  },
-  {
-    "datagolf_id": 7398,
-    "season": 2025,
-    "cv_pred_mu": -0.7038400515737715
-  },
-  {
-    "datagolf_id": 11276,
-    "season": 2025,
-    "cv_pred_mu": -0.7939006693531496
-  },
-  {
-    "datagolf_id": 21554,
-    "season": 2025,
-    "cv_pred_mu": -0.5439926111411649
-  },
-  {
-    "datagolf_id": 10091,
-    "season": 2025,
-    "cv_pred_mu": 2.081045138704634
-  },
-  {
-    "datagolf_id": 19870,
-    "season": 2025,
-    "cv_pred_mu": -0.7103317348852348
-  },
-  {
-    "datagolf_id": 16394,
-    "season": 2025,
-    "cv_pred_mu": -0.9304398563703197
-  },
-  {
-    "datagolf_id": 6430,
-    "season": 2025,
-    "cv_pred_mu": -0.23004363368115718
-  },
-  {
-    "datagolf_id": 19483,
-    "season": 2025,
-    "cv_pred_mu": -0.7219924834774465
-  },
-  {
-    "datagolf_id": 12423,
-    "season": 2025,
-    "cv_pred_mu": -0.37260583812251025
-  },
-  {
-    "datagolf_id": 28270,
-    "season": 2025,
-    "cv_pred_mu": -0.7916974188392867
-  },
-  {
-    "datagolf_id": 23014,
-    "season": 2025,
-    "cv_pred_mu": -0.10202315911242793
-  },
-  {
-    "datagolf_id": 8825,
-    "season": 2025,
-    "cv_pred_mu": -1.02075050108256
-  },
-  {
-    "datagolf_id": 14139,
-    "season": 2025,
-    "cv_pred_mu": 0.5092254255620947
-  },
-  {
-    "datagolf_id": 17646,
-    "season": 2025,
-    "cv_pred_mu": 0.3427840785693206
-  },
-  {
-    "datagolf_id": 18103,
-    "season": 2025,
-    "cv_pred_mu": -1.1134414711800251
-  },
-  {
-    "datagolf_id": 26651,
-    "season": 2025,
-    "cv_pred_mu": -0.31293046162528326
-  },
-  {
-    "datagolf_id": 13126,
-    "season": 2025,
-    "cv_pred_mu": -1.7050358685292437
-  },
-  {
-    "datagolf_id": 17538,
-    "season": 2025,
-    "cv_pred_mu": -0.4821894888520045
-  },
-  {
-    "datagolf_id": 23604,
-    "season": 2025,
-    "cv_pred_mu": -0.5440388303741986
+    "cv_pred_mu": 0.628932053093427
   },
   {
     "datagolf_id": 23323,
     "season": 2025,
-    "cv_pred_mu": 0.007782091840208449
+    "cv_pred_mu": 0.24837896685771071
   },
   {
-    "datagolf_id": 17786,
+    "datagolf_id": 14578,
     "season": 2025,
-    "cv_pred_mu": -0.9007909186901413
+    "cv_pred_mu": 0.5582748929160133
   },
   {
-    "datagolf_id": 19477,
+    "datagolf_id": 13562,
     "season": 2025,
-    "cv_pred_mu": -0.2566734890477864
+    "cv_pred_mu": 0.9807162088919794
   },
   {
-    "datagolf_id": 5689,
+    "datagolf_id": 26096,
     "season": 2025,
-    "cv_pred_mu": -0.32061874050157974
+    "cv_pred_mu": 0.3240483080509549
   },
   {
-    "datagolf_id": 14459,
+    "datagolf_id": 23602,
     "season": 2025,
-    "cv_pred_mu": 0.27440127919924606
+    "cv_pred_mu": 0.445960227137177
   },
   {
-    "datagolf_id": 15575,
+    "datagolf_id": 18841,
     "season": 2025,
-    "cv_pred_mu": -0.8383780662076439
+    "cv_pred_mu": 0.5127815109711129
   },
   {
-    "datagolf_id": 16841,
+    "datagolf_id": 17511,
     "season": 2025,
-    "cv_pred_mu": 0.18583798566535603
+    "cv_pred_mu": 0.2903033333944341
   },
   {
-    "datagolf_id": 19841,
+    "datagolf_id": 14577,
     "season": 2025,
-    "cv_pred_mu": 0.9800298102531273
+    "cv_pred_mu": -0.09493395135615615
   },
   {
-    "datagolf_id": 6986,
+    "datagolf_id": 14139,
     "season": 2025,
-    "cv_pred_mu": -1.1246279876827519
+    "cv_pred_mu": 0.6843320353766511
   },
   {
-    "datagolf_id": 12422,
+    "datagolf_id": 6430,
     "season": 2025,
-    "cv_pred_mu": -0.5524733003044842
+    "cv_pred_mu": 0.24627795409529635
   },
   {
-    "datagolf_id": 14838,
+    "datagolf_id": 17536,
     "season": 2025,
-    "cv_pred_mu": -0.05108308737122924
+    "cv_pred_mu": 0.27255585267260835
   },
   {
-    "datagolf_id": 1547,
+    "datagolf_id": 13900,
     "season": 2025,
-    "cv_pred_mu": -0.09218295866805626
+    "cv_pred_mu": 0.2025932833110017
   },
   {
-    "datagolf_id": 14636,
+    "datagolf_id": 6093,
     "season": 2025,
-    "cv_pred_mu": -0.007533592063274808
+    "cv_pred_mu": 0.08646287481914006
   },
   {
-    "datagolf_id": 19960,
+    "datagolf_id": 18079,
     "season": 2025,
-    "cv_pred_mu": 0.10323522765445803
-  },
-  {
-    "datagolf_id": 7334,
-    "season": 2025,
-    "cv_pred_mu": -0.8231546332450339
+    "cv_pred_mu": 0.2599832184984912
   },
   {
     "datagolf_id": 9771,
     "season": 2025,
-    "cv_pred_mu": -0.4158803005152927
+    "cv_pred_mu": 0.1854117084460245
   },
   {
-    "datagolf_id": 17488,
+    "datagolf_id": 17576,
     "season": 2025,
-    "cv_pred_mu": -0.6151863648203441
+    "cv_pred_mu": 0.09249760417660285
+  },
+  {
+    "datagolf_id": 14838,
+    "season": 2025,
+    "cv_pred_mu": 0.32210914144783914
+  },
+  {
+    "datagolf_id": 13872,
+    "season": 2025,
+    "cv_pred_mu": 0.24456013360774853
+  },
+  {
+    "datagolf_id": 17606,
+    "season": 2025,
+    "cv_pred_mu": -0.3785870854144389
+  },
+  {
+    "datagolf_id": 14796,
+    "season": 2025,
+    "cv_pred_mu": -0.003150135023046702
+  },
+  {
+    "datagolf_id": 19428,
+    "season": 2025,
+    "cv_pred_mu": 0.24541198338517461
+  },
+  {
+    "datagolf_id": 21554,
+    "season": 2025,
+    "cv_pred_mu": -0.18925386843143036
+  },
+  {
+    "datagolf_id": 23604,
+    "season": 2025,
+    "cv_pred_mu": 0.2298007734995256
+  },
+  {
+    "datagolf_id": 16243,
+    "season": 2025,
+    "cv_pred_mu": 0.04984955721369318
+  },
+  {
+    "datagolf_id": 24766,
+    "season": 2025,
+    "cv_pred_mu": 0.14593866766287564
+  },
+  {
+    "datagolf_id": 8825,
+    "season": 2025,
+    "cv_pred_mu": -0.12512323227878142
+  },
+  {
+    "datagolf_id": 11676,
+    "season": 2025,
+    "cv_pred_mu": 0.36766423684556754
   },
   {
     "datagolf_id": 15856,
     "season": 2025,
-    "cv_pred_mu": -0.4087989612624245
+    "cv_pred_mu": 0.21007085303794282
+  },
+  {
+    "datagolf_id": 5689,
+    "season": 2025,
+    "cv_pred_mu": -0.22349581238366628
+  },
+  {
+    "datagolf_id": 26653,
+    "season": 2025,
+    "cv_pred_mu": -0.5248148341463496
+  },
+  {
+    "datagolf_id": 14459,
+    "season": 2025,
+    "cv_pred_mu": 0.11792239103004953
+  },
+  {
+    "datagolf_id": 11276,
+    "season": 2025,
+    "cv_pred_mu": -0.20344472058819177
+  },
+  {
+    "datagolf_id": 7398,
+    "season": 2025,
+    "cv_pred_mu": -0.22764316168727028
+  },
+  {
+    "datagolf_id": 6986,
+    "season": 2025,
+    "cv_pred_mu": -0.46320483257272416
+  },
+  {
+    "datagolf_id": 7399,
+    "season": 2025,
+    "cv_pred_mu": -0.29005704733079885
+  },
+  {
+    "datagolf_id": 15575,
+    "season": 2025,
+    "cv_pred_mu": -0.4204715507399986
+  },
+  {
+    "datagolf_id": 28270,
+    "season": 2025,
+    "cv_pred_mu": -0.26155731949817085
   },
   {
     "datagolf_id": 12920,
     "season": 2025,
-    "cv_pred_mu": -1.1964685841187848
+    "cv_pred_mu": -0.8936485403641543
   },
   {
-    "datagolf_id": 5513,
+    "datagolf_id": 17786,
     "season": 2025,
-    "cv_pred_mu": -1.4767667078834037
+    "cv_pred_mu": -0.8194097811697818
   },
   {
-    "datagolf_id": 25384,
+    "datagolf_id": 26651,
     "season": 2025,
-    "cv_pred_mu": -0.7882458736003031
+    "cv_pred_mu": 0.2527274485917889
   },
   {
-    "datagolf_id": 33354,
+    "datagolf_id": 19483,
     "season": 2025,
-    "cv_pred_mu": -0.7882458736003031
+    "cv_pred_mu": -0.2780122344544306
   },
   {
-    "datagolf_id": 22025,
+    "datagolf_id": 14636,
     "season": 2025,
-    "cv_pred_mu": -0.7863549418481175
+    "cv_pred_mu": 0.3209503978768547
   },
   {
-    "datagolf_id": 5717,
+    "datagolf_id": 13126,
     "season": 2025,
-    "cv_pred_mu": -2.0642401908420362
+    "cv_pred_mu": 0.18510442649452602
   },
   {
-    "datagolf_id": 44,
+    "datagolf_id": 19477,
     "season": 2025,
-    "cv_pred_mu": -1.8752597846516006
+    "cv_pred_mu": -0.5533652733243508
   },
   {
-    "datagolf_id": 3485,
+    "datagolf_id": 12422,
     "season": 2025,
-    "cv_pred_mu": -2.4967912498269262
+    "cv_pred_mu": -0.4983351632878837
   },
   {
-    "datagolf_id": 290,
+    "datagolf_id": 15466,
     "season": 2025,
-    "cv_pred_mu": -2.028813214499296
+    "cv_pred_mu": 0.3739851016666621
+  },
+  {
+    "datagolf_id": 23014,
+    "season": 2025,
+    "cv_pred_mu": 0.3804015863855235
+  },
+  {
+    "datagolf_id": 17488,
+    "season": 2025,
+    "cv_pred_mu": 0.20858196052412198
+  },
+  {
+    "datagolf_id": 19870,
+    "season": 2025,
+    "cv_pred_mu": -0.06258060157174132
+  },
+  {
+    "datagolf_id": 17538,
+    "season": 2025,
+    "cv_pred_mu": -0.24090961156423432
+  },
+  {
+    "datagolf_id": 12423,
+    "season": 2025,
+    "cv_pred_mu": -0.07346149837553516
+  },
+  {
+    "datagolf_id": 7334,
+    "season": 2025,
+    "cv_pred_mu": -0.8540315910177916
+  },
+  {
+    "datagolf_id": 22085,
+    "season": 2025,
+    "cv_pred_mu": 0.47627831928880543
+  },
+  {
+    "datagolf_id": 16394,
+    "season": 2025,
+    "cv_pred_mu": 0.05175714135750506
+  },
+  {
+    "datagolf_id": 19960,
+    "season": 2025,
+    "cv_pred_mu": -0.5173785675203392
+  },
+  {
+    "datagolf_id": 1547,
+    "season": 2025,
+    "cv_pred_mu": -0.37641935470590754
+  },
+  {
+    "datagolf_id": 19195,
+    "season": 2025,
+    "cv_pred_mu": 0.9043736882998707
+  },
+  {
+    "datagolf_id": 18103,
+    "season": 2025,
+    "cv_pred_mu": 0.12128349027916491
+  },
+  {
+    "datagolf_id": 12294,
+    "season": 2025,
+    "cv_pred_mu": 0.7174739643488299
+  },
+  {
+    "datagolf_id": 18634,
+    "season": 2025,
+    "cv_pred_mu": 0.23253545606364817
+  },
+  {
+    "datagolf_id": 14181,
+    "season": 2025,
+    "cv_pred_mu": -0.24006737735314443
+  },
+  {
+    "datagolf_id": 23838,
+    "season": 2025,
+    "cv_pred_mu": -0.2976852600553542
+  },
+  {
+    "datagolf_id": 17780,
+    "season": 2025,
+    "cv_pred_mu": -0.16051672852465632
+  },
+  {
+    "datagolf_id": 27364,
+    "season": 2025,
+    "cv_pred_mu": -0.10373565818934886
+  },
+  {
+    "datagolf_id": 28635,
+    "season": 2025,
+    "cv_pred_mu": -0.36620604384434047
+  },
+  {
+    "datagolf_id": 18554,
+    "season": 2025,
+    "cv_pred_mu": 0.16331843598272025
+  },
+  {
+    "datagolf_id": 28473,
+    "season": 2025,
+    "cv_pred_mu": -0.6448291804579078
+  },
+  {
+    "datagolf_id": 22833,
+    "season": 2025,
+    "cv_pred_mu": -0.41408113352823395
+  },
+  {
+    "datagolf_id": 17543,
+    "season": 2025,
+    "cv_pred_mu": -0.3609855617007612
+  },
+  {
+    "datagolf_id": 17881,
+    "season": 2025,
+    "cv_pred_mu": -0.3036515071870056
+  },
+  {
+    "datagolf_id": 14795,
+    "season": 2025,
+    "cv_pred_mu": -0.7605552501318975
+  },
+  {
+    "datagolf_id": 18105,
+    "season": 2025,
+    "cv_pred_mu": -0.4240740220372807
+  },
+  {
+    "datagolf_id": 13508,
+    "season": 2025,
+    "cv_pred_mu": -0.4016533213147551
+  },
+  {
+    "datagolf_id": 13470,
+    "season": 2025,
+    "cv_pred_mu": 0.020797936550210283
+  },
+  {
+    "datagolf_id": 19872,
+    "season": 2025,
+    "cv_pred_mu": -0.6886513503420566
+  },
+  {
+    "datagolf_id": 18628,
+    "season": 2025,
+    "cv_pred_mu": -0.6428036458866171
+  },
+  {
+    "datagolf_id": 12909,
+    "season": 2025,
+    "cv_pred_mu": -1.304194889201706
+  },
+  {
+    "datagolf_id": 28469,
+    "season": 2025,
+    "cv_pred_mu": -0.5780099533256178
+  },
+  {
+    "datagolf_id": 23465,
+    "season": 2025,
+    "cv_pred_mu": -0.025685967206433485
   }
 ]

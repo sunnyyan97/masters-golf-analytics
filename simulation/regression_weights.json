@@ -1,16 +1,19 @@
 {
-  "intercept": -0.9656354144395866,
+  "intercept": -0.5339670988070346,
   "coefficients": {
-    "dg_pred_win_pct": 21.559731541016202,
-    "prior_augusta_sg": 0.19751121292774626,
-    "prior_appearances": 0.1347914223124241,
-    "driving_dist_vs_avg": 0.02487542383633829,
-    "long_approach_sg": 3.6429659630939
+    "sg_approach": 0.6451397763997769,
+    "sg_putting": 0.059770032360824225,
+    "sg_off_tee": 0.11378530525228037,
+    "sg_around_green": 1.6040833443843943,
+    "prior_augusta_sg": 0.022127779329881445,
+    "prior_appearances": 0.0846121981335804,
+    "driving_dist_vs_avg": 0.002562921454617263,
+    "long_approach_sg": 0.90322927987621
   },
   "model_alpha": 100.0,
-  "cv_r2_mean": 0.14919675354497802,
-  "cv_r2_std": 0.03567953180795694,
-  "n_training_samples": 448,
+  "cv_r2_mean": 0.07011499169570734,
+  "cv_r2_std": 0.04901516754210734,
+  "n_training_samples": 383,
   "training_seasons": [
     2021,
     2022,
@@ -19,12 +22,13 @@
     2025
   ],
   "features": [
-    "dg_pred_win_pct",
+    "sg_approach",
+    "sg_putting",
+    "sg_off_tee",
+    "sg_around_green",
     "prior_augusta_sg",
     "prior_appearances",
     "driving_dist_vs_avg",
     "long_approach_sg"
-  ],
-  "dg_pred_win_pct_mean": 0.011088392857142847,
-  "dg_pred_win_pct_std": 0.018510036036580132
+  ]
 }

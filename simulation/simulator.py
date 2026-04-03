@@ -21,39 +21,26 @@ from simulation.model_inputs import load_inputs
 
 
 def compute_regression_mu(df: pd.DataFrame) -> np.ndarray:
-    """Compute mu using ridge regression weights from regression_weights.json.
-
-    dg_pred_win_pct was trained on pred_archive probabilities (0.01–0.15 range).
-    For 2026 prediction, dg_overall_skill (sg_overall_rolling, SG strokes units)
-    is normalized to the same mean/std as the training feature before the
-    coefficient is applied, preserving relative ordering while correcting scale.
-    """
+    """Compute mu using ridge regression weights from regression_weights.json."""
     weights_path = Path(__file__).parent / "regression_weights.json"
     with open(weights_path) as f:
         w = json.load(f)
     coef = w["coefficients"]
     intercept = w["intercept"]
 
-    # Normalize dg_overall_skill to match training dg_pred_win_pct distribution
-    skill = df["dg_overall_skill"].fillna(0.0).to_numpy()
-    skill_std = skill.std() if skill.std() > 0 else 1.0
-    dg_normalized = (
-        (skill - skill.mean()) / skill_std
-        * w["dg_pred_win_pct_std"]
-        + w["dg_pred_win_pct_mean"]
-    )
-
-    mu = np.full(len(df), intercept)
-    mu = mu + coef["dg_pred_win_pct"] * dg_normalized
-
-    # Remaining features are already on the correct scale
-    other_features = {
+    # Map training feature names → mart_player_model_inputs column names
+    feature_col_map = {
+        "sg_approach":         "sg_app",
+        "sg_putting":          "sg_putt",
+        "sg_off_tee":          "sg_ott",
+        "sg_around_green":     "sg_arg",
         "prior_augusta_sg":    "augusta_sg_total",
         "prior_appearances":   "augusta_seasons_played",
         "driving_dist_vs_avg": "driving_dist_vs_avg",
         "long_approach_sg":    "long_approach_sg",
     }
-    for feat, col in other_features.items():
+    mu = np.full(len(df), intercept)
+    for feat, col in feature_col_map.items():
         mu = mu + coef[feat] * df[col].fillna(0.0).to_numpy()
     return mu
 

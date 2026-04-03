@@ -17,7 +17,10 @@ from sklearn.preprocessing import StandardScaler
 from ingestion.load_to_duckdb import get_connection
 
 FEATURES = [
-    "dg_pred_win_pct",
+    "sg_approach",
+    "sg_putting",
+    "sg_off_tee",
+    "sg_around_green",
     "prior_augusta_sg",
     "prior_appearances",
     "driving_dist_vs_avg",
@@ -113,11 +116,6 @@ def main():
         print(f"  {feat:<25} {coef:+.4f}")
     print(f"  {'intercept':<25} {intercept_orig:+.4f}")
 
-    # Save dg_pred_win_pct distribution stats so the simulator can normalize
-    # dg_overall_skill (in SG units) to the same scale at prediction time.
-    pred_win_mean = float(df["dg_pred_win_pct"].mean())
-    pred_win_std  = float(df["dg_pred_win_pct"].std())
-
     # Save weights
     weights = {
         "intercept": float(intercept_orig),
@@ -128,8 +126,6 @@ def main():
         "n_training_samples": int(len(df)),
         "training_seasons": sorted(df["season"].unique().tolist()),
         "features": FEATURES,
-        "dg_pred_win_pct_mean": pred_win_mean,
-        "dg_pred_win_pct_std":  pred_win_std,
     }
 
     out_path = Path(__file__).parent / "regression_weights.json"
