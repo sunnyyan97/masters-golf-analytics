@@ -85,8 +85,13 @@ def run_simulation(df: pd.DataFrame, n_sims: int = 50_000, seed=None,
         top25_pct, mc_pct, mu, sigma, model_type
     """
     # Select mu source based on model type
+    # Select mu source based on model type
     if model_type == "regression":
         base_mu = compute_regression_mu(df)
+    elif model_type == "ensemble":
+        manual_mu = df["augusta_mu"].to_numpy()
+        regression_mu = compute_regression_mu(df)
+        base_mu = (manual_mu + regression_mu) / 2
     else:
         base_mu = df["augusta_mu"].to_numpy()
 
@@ -274,7 +279,7 @@ def main():
     parser.add_argument("--seed", type=int, default=None,
                         help="RNG seed for reproducibility (default: random)")
     parser.add_argument("--model", type=str, default="manual",
-                        choices=["manual", "regression"],
+                        choices=["manual", "regression", "ensemble"],
                         help="Model type to run (default: manual)")
     args = parser.parse_args()
 
